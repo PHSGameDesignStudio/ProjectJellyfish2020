@@ -1,0 +1,11 @@
+{
+	"displayName": "Custom NUnit",
+	"name": "com.unity.ext.nunit",
+	"version": "0.1.5-preview",
+	"unity": "2018.3",
+	"description": "Custom Nunit build to work with Unity",
+	"keywords": ["nunit", "unittest", "test"],
+	"category": "Libraries",
+	"dependencies": {
+	}
+}
