@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Battle/BattleScene.unity
+- path: Assets/Scenes/Battle/Battle_PlayerTurn.unity
   isLoaded: 1
   isActive: 1

@@ -78,5 +78,7 @@ public class BulletManager : MonoBehaviour
         // Initialize Pool
         for (int i = 0; i < Pooling.poolable.Length; i++) Pooling.poolable[i] = null;
         Bullet.defaultObj = Resources.Load("Bullet") as GameObject;
+        BulletSpread.dfBulletSpread = Resources.Load("BulletSpread") as GameObject;
+
     }
 }

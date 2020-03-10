@@ -63,16 +63,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Battle\BattleEntity.cs" />
+    <Compile Include="Assets\Scripts\Battle\BattleEntityAttack.cs" />
+    <Compile Include="Assets\Scripts\Battle\BattleManager.cs" />
     <Compile Include="Assets\Scripts\Battle\BattleOptions.cs" />
     <Compile Include="Assets\Scripts\Battle\BattleSequence.cs" />
     <Compile Include="Assets\Scripts\Battle\Bullet\Bullet.cs" />
     <Compile Include="Assets\Scripts\Battle\Bullet\BulletManager.cs" />
+    <Compile Include="Assets\Scripts\Battle\Bullet\BulletSpread.cs" />
+    <Compile Include="Assets\Scripts\Battle\Bullet\BulletSpreadV2.cs" />
+    <Compile Include="Assets\Scripts\Battle\Bullet\MoveTowards.cs" />
     <Compile Include="Assets\Scripts\Battle\BulletSpray.cs" />
+    <Compile Include="Assets\Scripts\Battle\EnemyAct.cs" />
+    <Compile Include="Assets\Scripts\Battle\PlayerAct.cs" />
+    <Compile Include="Assets\Scripts\Battle\RegAttack\AttackBox.cs" />
+    <Compile Include="Assets\Scripts\Battle\RegAttack\AttackSlider.cs" />
+    <Compile Include="Assets\Scripts\ButtonSelect.cs" />
+    <Compile Include="Assets\Scripts\Fade.cs" />
     <Compile Include="Assets\Scripts\Player\CharacterController2D.cs" />
     <Compile Include="Assets\Scripts\Player\CharScript.cs" />
     <Compile Include="Assets\Scripts\Player\InventoryScript.cs" />
     <Compile Include="Assets\Scripts\Player\Item_Manager.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
+    <None Include="Assets\Fonts\fontinfo.txt" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/Documents/UnityProjects/ProjectJellyfish/ProjectJellyfish2020/JellyfishGame/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Hostile
+  - AttackGoal
+  - AttackArea
   layers:
   - Default
   - TransparentFX
