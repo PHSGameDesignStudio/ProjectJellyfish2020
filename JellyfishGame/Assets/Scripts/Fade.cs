@@ -23,21 +23,24 @@ public class Fade : MonoBehaviour
 
         spRenderer = spriteObj.GetComponent<SpriteRenderer>();
         mainColor = spRenderer.color;
+        print(mainColor);
     }
     void Update()
     {
-        spRenderer.color = Color.Lerp(new Color(mainColor.r, mainColor.g, mainColor.b, 0), mainColor, currentTime / maxTime);
+        spRenderer.color = Color.Lerp(new Color(mainColor.r, mainColor.g, mainColor.b, 0), new Color(mainColor.r, mainColor.g, mainColor.b, 1), currentTime / maxTime);
         currentTime += Time.deltaTime * m;
+        print(currentTime);
+        print(Time.deltaTime * m);
         if (currentTime <= 0) Destroy(this);
     }
 
     public static IEnumerator Do(string type, GameObject obj, float time)
     {
         var f = obj.AddComponent<Fade>();
-        f.maxTime = time / 2;
+        f.spriteObj = obj;
+        f.maxTime = time;
         f.fadeIn = false;
         if (type == "in") f.fadeIn = true;
-        f.spriteObj = obj;
         yield return new WaitForSeconds(time);
         Destroy(f);
         Destroy(obj.GetComponent<Fade>());

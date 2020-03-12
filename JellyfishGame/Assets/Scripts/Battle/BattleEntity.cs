@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BattleEntity : MonoBehaviour
 {
@@ -26,10 +27,12 @@ public class BattleEntity : MonoBehaviour
         transform.SetParent(null);
         if (hp > 0)
         {
-            GameObject obj = Instantiate(attackOptions[0], Vector2.zero, Quaternion.identity, null) as GameObject; // Creates new attack
-            obj.transform.SetParent(null); 
+            GameObject obj = GameObject.Find("InstantiateRunner").GetComponent<InstantiateRunner>().Make(attackOptions[0]) as GameObject; // Creates new attack
+            obj.transform.SetParent(null);
+            SceneManager.MoveGameObjectToScene(obj, SceneManager.GetActiveScene());
+            print(SceneManager.GetActiveScene().name);
             obj.GetComponent<BattleEntityAttack>().entity = GetComponent<BattleEntity>(); // Gives a reference to parent
-            print("YAY ATTACK" + obj);
+            print("YAY ATTACK" + obj.scene.name);
         }
     }
     public void Damage(int hpDec)

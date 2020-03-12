@@ -148,6 +148,7 @@ MonoBehaviour:
   destination: {x: 2, y: 4}
   speed: 2
   fadeTime: 0.5
+  useRandomX: 1
 --- !u!114 &5517104359336661764
 MonoBehaviour:
   m_ObjectHideFlags: 0

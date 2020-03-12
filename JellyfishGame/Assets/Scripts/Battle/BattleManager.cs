@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BattleManager : MonoBehaviour
 {
@@ -32,7 +33,7 @@ public class BattleManager : MonoBehaviour
         if (battleState == "PLAYER")
         {
             battleState = "ENTITY";
-            StartBattle();
+            StartCoroutine(StartBattle());
             print("BATTLE STARTO");
         }
 
@@ -63,7 +64,8 @@ public class BattleManager : MonoBehaviour
         battleState = "PLAYER";
         Fade.MakeOverlay();
         yield return new WaitForSeconds(1);
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Battle_PlayerTurn");
+        SceneManager.LoadScene("Battle_PlayerTurn");
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName("Battle_PlayerTurn"));
     }
 
     // MODE = ENTITY
@@ -80,16 +82,18 @@ public class BattleManager : MonoBehaviour
         DontDestroyOnLoad(gameObject); // UNABLE TO INSTANTIATE
         print("SCENE STARTO");
     }
-    public void StartBattle()
+    public IEnumerator StartBattle()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Battle_EntityTurn");
-        
+        SceneManager.LoadScene("Battle_EntityTurn", LoadSceneMode.Single);
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName("Battle_EntityTurn"));
+
+
         battleState = "ENTITY";
         for (int i = 0; i < entities.Count; i++)
         {
             ((GameObject)entities[i]).transform.SetParent(null);
             ((GameObject)entities[i]).GetComponent<BattleEntity>().StartAttack();
         }
-        
     }
 }

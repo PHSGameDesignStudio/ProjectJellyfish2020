@@ -49,7 +49,7 @@ public class BulletSpray : MonoBehaviour
         if (bulletTimer <= 0 && !usingWaitTransition) NewBullet();
 
         // SCRIPT TIME
-        if (scriptTime <= 0)
+        if (timer <= 0)
         {
             GetComponent<BattleEntityAttack>().entity.isAttackDone = true;
             Destroy(gameObject);
@@ -59,6 +59,7 @@ public class BulletSpray : MonoBehaviour
         sprayTimer -= Time.deltaTime;
         bulletTimer -= Time.deltaTime;
         waitTimer -= Time.deltaTime;
+        timer -= Time.deltaTime;
     }
     void NewBullet()
     {
@@ -107,25 +108,19 @@ public class BulletSpray : MonoBehaviour
         usingWaitTransition = true;
 
         // Fade Out
-        var f1 = gameObject.AddComponent<Fade>();
-        f1.maxTime = timeWaiting / 2;
-        f1.fadeIn = false;
-        f1.spriteObj = this.spriteObj;
-        yield return new WaitForSeconds(timeWaiting / 2);
-        Destroy(f1);
-        Destroy(GetComponent<Fade>());
+        StartCoroutine(Fade.Do("out", spriteObj, timeWaiting * 0.45f));
+        yield return new WaitForSeconds(timeWaiting * 0.45f);
         // Change Position
         NewPos();
+        yield return new WaitForSeconds((timeWaiting * 0.1f));
         // Fade In
-        var f2 = gameObject.AddComponent<Fade>();
-        f2.maxTime = timeWaiting / 2;
-        f2.fadeIn = true;
-        f2.spriteObj = this.spriteObj;
-        yield return new WaitForSeconds(timeWaiting / 2);
-        Destroy(f2);
-        Destroy(GetComponent<Fade>());
+        StartCoroutine(Fade.Do("in", spriteObj, timeWaiting * 0.45f));
+        yield return new WaitForSeconds((timeWaiting * 0.45f));
+   
         // Continue
         NewSpray();
+
+        // USE Fade.Do();
 
         
     }

@@ -51,7 +51,7 @@ MonoBehaviour:
   timePerBullet: 0.07
   timeWaiting: 1
   spriteObj: {fileID: 3507907979894407887}
-  scriptTime: 0
+  scriptTime: 20
 --- !u!114 &114958786708096958
 MonoBehaviour:
   m_ObjectHideFlags: 0

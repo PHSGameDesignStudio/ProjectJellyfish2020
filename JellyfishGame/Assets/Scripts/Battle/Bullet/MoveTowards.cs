@@ -8,6 +8,7 @@ public class MoveTowards : MonoBehaviour
     public float speed;
     bool usingFade = true;
     public float fadeTime = 0.5f;
+    public bool useRandomX;
 
     float fadeTimer;
     void Start()
@@ -15,6 +16,12 @@ public class MoveTowards : MonoBehaviour
         StartCoroutine(Fade.Do("in",gameObject, fadeTime));
         usingFade = true;
         fadeTimer = fadeTime;
+        var pos = transform.position;
+        if (useRandomX) {
+            var x = destination.x;
+            pos.x = destination.x = Random.Range(-x, x);
+            transform.position = pos;
+        }
     }
 
     // Update is called once per frame
