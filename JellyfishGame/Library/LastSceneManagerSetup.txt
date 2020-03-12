@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/Battle/Battle_PlayerTurn.unity
+=======
+- path: Assets/Scenes/StartingCave.unity
+>>>>>>> overworld
   isLoaded: 1
   isActive: 1
