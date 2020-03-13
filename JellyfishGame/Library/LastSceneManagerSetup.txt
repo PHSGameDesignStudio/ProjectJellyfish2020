@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/StartingCave.unity
+- path: Assets/Scenes/OverworldTest/Overworld64.unity
   isLoaded: 1
   isActive: 1
