@@ -9,18 +9,20 @@ public class BattleEntity : MonoBehaviour
     float hp;
     public GameObject[] attackOptions;
     public bool isAttackDone;
+    SpriteRenderer spRenderer;
 
     // Start is called before the first frame update
     void Start()
     {
         hp = startHP;
         DontDestroyOnLoad(gameObject);
+        spRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        spRenderer.enabled = (BattleManager.battleState == "PLAYER");
     }
     public void StartAttack()
     {

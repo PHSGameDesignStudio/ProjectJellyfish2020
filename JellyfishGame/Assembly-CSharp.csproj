@@ -90,6 +90,7 @@
     <Compile Include="Assets\Scripts\Battle\RegAttack\AttackBox.cs" />
     <Compile Include="Assets\Scripts\Battle\RegAttack\AttackSlider.cs" />
     <Compile Include="Assets\Scripts\ButtonSelect.cs" />
+    <Compile Include="Assets\Scripts\CameraData.cs" />
     <Compile Include="Assets\Scripts\Fade.cs" />
     <Compile Include="Assets\Scripts\InstantiateRunner.cs" />
     <Compile Include="Assets\Scripts\Player\CharacterController2D.cs" />

@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Battle/Battle_PlayerTurn.unity
+    path: Assets/Scenes/Battle/Battle_PlayerTurnTest.unity
     guid: 4463283e0a91dfb439d6e733a65b866d
   - enabled: 1
     path: Assets/Scenes/Battle/Battle_EntityTurn.unity

@@ -9,7 +9,7 @@ public class BattleManager : MonoBehaviour
     public static ArrayList entities;
     public int minEnemies;
     public int maxEnemies;
-    public string battleState = "PLAYER";
+    public static string battleState = "PLAYER";
     void Start()
     {
         var l = new object();
@@ -30,12 +30,12 @@ public class BattleManager : MonoBehaviour
                 StartCoroutine(GotoPlayerTurn());
 
         // HERE JUST FOR TESTING THIS WILL START WHEN BUTTON PRESSED
-        if (battleState == "PLAYER")
+        /*if (battleState == "PLAYER")
         {
             battleState = "ENTITY";
             StartCoroutine(StartBattle());
             print("BATTLE STARTO");
-        }
+        }*/
 
                 
 
@@ -75,8 +75,11 @@ public class BattleManager : MonoBehaviour
         transform.SetParent(null); // ABLE TO INSTANTIATE
         for (int i = 0; i <= n; i++)
         {
-            
             GameObject obj = Instantiate(RefEntities[Random.Range(0, RefEntities.Length)]) as GameObject;
+            // Entity Positioning
+            var vect = new Vector3(CameraData.width * 2f / 3f, (((float)i / (float)n) * CameraData.height) - (CameraData.height / 2f));
+            print(vect);
+            obj.transform.position = vect;
             entities.Add(obj);
         }
         DontDestroyOnLoad(gameObject); // UNABLE TO INSTANTIATE
