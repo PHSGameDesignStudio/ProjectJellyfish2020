@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Battle/Battle_PlayerTurn.unity
+- path: Assets/Scenes/Battle/OceanBattleManager.unity
   isLoaded: 1
   isActive: 1

@@ -18,6 +18,7 @@ public class BattleManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             entities = new ArrayList();
             InitEntities();
+            StartCoroutine(GotoPlayerTurn());
         }
     }
     // WAIT A SEC IM NOT CHANGING ENTITIES!
@@ -66,8 +67,13 @@ public class BattleManager : MonoBehaviour
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene("Battle_PlayerTurn");
         SceneManager.SetActiveScene(SceneManager.GetSceneByName("Battle_PlayerTurn"));
-    }
 
+        StartCoroutine(SetEntityPositions());
+    }
+    public IEnumerator SetEntityPositions()
+    {
+        
+    }
     // MODE = ENTITY
     public void InitEntities()
     {
@@ -77,9 +83,9 @@ public class BattleManager : MonoBehaviour
         {
             GameObject obj = Instantiate(RefEntities[Random.Range(0, RefEntities.Length)]) as GameObject;
             // Entity Positioning
-            var vect = new Vector3(CameraData.width * 2f / 3f, (((float)i / (float)n) * CameraData.height) - (CameraData.height / 2f));
-            print(vect);
-            obj.transform.position = vect;
+            print("W  " + CameraData.width);
+            
+            
             entities.Add(obj);
         }
         DontDestroyOnLoad(gameObject); // UNABLE TO INSTANTIATE
