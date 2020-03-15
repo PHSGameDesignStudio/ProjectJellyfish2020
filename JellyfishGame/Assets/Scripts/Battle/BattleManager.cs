@@ -9,16 +9,39 @@ public class BattleManager : MonoBehaviour
     public static ArrayList entities;
     public int minEnemies;
     public int maxEnemies;
-    public static string battleState = "PLAYER";
+    public enum BattleState
+    {
+        PlayerMain,
+        PlayerAttack,
+        PlayerMagic,
+        PlayerInventory,
+        PlayerInteract,
+        Player,
+        EntityTurn,
+    }
+    public static BattleState battleState;
+    public GameObject playerMainUI;
+    public GameObject playerMagicUI;
+    public GameObject playerInventoryUI;
+    public GameObject playerInteractUI;
+    public GameObject entityUI;
+    public Dictionary<BattleState, GameObject> currentUI;
     void Start()
     {
+        battleState = BattleState.PlayerMain;
+        currentUI = new Dictionary<BattleState, GameObject>() {
+            { BattleState.PlayerMain, playerMainUI },
+            { BattleState.PlayerMagic, playerMagicUI },
+            { BattleState.PlayerInventory, playerInventoryUI },
+            { BattleState.PlayerInteract, playerInteractUI },
+            { BattleState.EntityTurn, entityUI },
+
+        };
         var l = new object();
         lock (l)
         {
-            DontDestroyOnLoad(gameObject);
             entities = new ArrayList();
             InitEntities();
-            StartCoroutine(GotoPlayerTurn());
         }
     }
     // WAIT A SEC IM NOT CHANGING ENTITIES!
@@ -26,9 +49,15 @@ public class BattleManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (battleState == "ENTITY")
+        if (battleState == BattleState.EntityTurn)
             if (isAllBattlesOver())
-                StartCoroutine(GotoPlayerTurn());
+                battleState = BattleState.PlayerMain;
+
+        foreach (var item in currentUI)
+        {
+            // The UI will only show up if the key for that value is the same as the current battleState.
+            item.Value.SetActive(item.Key == battleState);
+        }
 
         // HERE JUST FOR TESTING THIS WILL START WHEN BUTTON PRESSED
         /*if (battleState == "PLAYER")
@@ -38,7 +67,8 @@ public class BattleManager : MonoBehaviour
             print("BATTLE STARTO");
         }*/
 
-                
+
+
 
     }
     bool isAllBattlesOver()
@@ -56,23 +86,7 @@ public class BattleManager : MonoBehaviour
         }
         return false;
         // If no falses have been returned we can assume true.
-        
-    }
 
-    // MODE = PLAYER
-    public IEnumerator GotoPlayerTurn()
-    {
-        battleState = "PLAYER";
-        Fade.MakeOverlay();
-        yield return new WaitForSeconds(1);
-        SceneManager.LoadScene("Battle_PlayerTurn");
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName("Battle_PlayerTurn"));
-
-        StartCoroutine(SetEntityPositions());
-    }
-    public IEnumerator SetEntityPositions()
-    {
-        
     }
     // MODE = ENTITY
     public void InitEntities()
@@ -82,27 +96,41 @@ public class BattleManager : MonoBehaviour
         for (int i = 0; i <= n; i++)
         {
             GameObject obj = Instantiate(RefEntities[Random.Range(0, RefEntities.Length)]) as GameObject;
-            // Entity Positioning
-            print("W  " + CameraData.width);
-            
-            
+            var e = obj.GetComponent<BattleEntity>();
+            e.i = i; // Item in list
+            e.n = n; // length of list
             entities.Add(obj);
         }
         DontDestroyOnLoad(gameObject); // UNABLE TO INSTANTIATE
         print("SCENE STARTO");
     }
-    public IEnumerator StartBattle()
+    public void StartBattle()
     {
-        SceneManager.LoadScene("Battle_EntityTurn", LoadSceneMode.Single);
-        yield return new WaitForSeconds(0.5f);
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName("Battle_EntityTurn"));
-
-
-        battleState = "ENTITY";
+        battleState = BattleState.EntityTurn;
         for (int i = 0; i < entities.Count; i++)
         {
             ((GameObject)entities[i]).transform.SetParent(null);
             ((GameObject)entities[i]).GetComponent<BattleEntity>().StartAttack();
         }
     }
+    public static bool isItPlayerTurn() {
+        var playerStates = new ArrayList()
+        {
+            BattleState.PlayerMain,
+            BattleState.PlayerMagic,
+            BattleState.PlayerInventory,
+            BattleState.PlayerInteract,
+        };
+        foreach (BattleState state in playerStates)
+        {
+            if (battleState == state) return true;
+        };
+        return false;
+    }
+    public void AttackUI()
+    {
+        battleState = BattleState.PlayerAttack;
+        Instantiate(Resources.Load("AttackBox"));
+    }
+
 }

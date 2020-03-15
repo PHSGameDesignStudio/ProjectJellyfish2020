@@ -6,14 +6,19 @@ using UnityEngine.UI;
 public class ButtonSelect : MonoBehaviour
 {
     // Start is called before the first frame update
+    bool selected = false;
     void Start()
     {
-        GetComponent<Button>().Select();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (!selected)
+        {
+            GetComponent<Button>().Select();
+            selected = true;
+        }
     }
 }

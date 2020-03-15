@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Battle/Battle_EntityTurn.unity
     guid: 3215430acc0870444b24395eadc89c33
   - enabled: 1
-    path: Assets/Scenes/Battle/Battle_PlayerTurn.unity
+    path: Assets/Scenes/Battle/OceanBattle1.unity
     guid: 8d930164a32c6014496b4b23bb57ff79
   m_configObjects: {}

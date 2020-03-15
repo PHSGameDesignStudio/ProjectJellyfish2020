@@ -11,7 +11,8 @@ public class CameraData : MonoBehaviour
     {
         cam = GetComponent<Camera>();
         height = cam.orthographicSize * 2;
-        width = height * (1 / cam.aspect); // getting reciprical
+        width = height * cam.aspect; // getting reciprical
+        print(width);
     }
 
     // Update is called once per frame
