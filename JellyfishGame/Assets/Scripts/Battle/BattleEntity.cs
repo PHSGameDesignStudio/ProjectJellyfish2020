@@ -11,6 +11,7 @@ public class BattleEntity : MonoBehaviour
     public bool isAttackDone;
     SpriteRenderer spRenderer;
     public int n, i;
+    SpriteRenderer selectUI;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,7 @@ public class BattleEntity : MonoBehaviour
         hp = startHP;
         DontDestroyOnLoad(gameObject);
         spRenderer = GetComponent<SpriteRenderer>();
+        selectUI = transform.Find("selectUI").GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -43,6 +45,10 @@ public class BattleEntity : MonoBehaviour
     {
         spRenderer.enabled = BattleManager.isItPlayerTurn();
         SetPosition();
+
+        // If we arent selecting any entities there is no need to show the select sprite.
+        if (BattleManager.battleState != BattleManager.BattleState.PlayerSelectEntity) 
+            selectUI.enabled = false;
     }
     public void SetPosition()
     {

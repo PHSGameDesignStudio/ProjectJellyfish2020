@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class ButtonSelect : MonoBehaviour
 {
@@ -9,16 +10,11 @@ public class ButtonSelect : MonoBehaviour
     bool selected = false;
     void Start()
     {
-        
+        GameObject.Find("EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(gameObject);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!selected)
-        {
-            GetComponent<Button>().Select();
-            selected = true;
-        }
     }
 }

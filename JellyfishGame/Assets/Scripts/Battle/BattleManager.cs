@@ -17,6 +17,7 @@ public class BattleManager : MonoBehaviour
         PlayerInventory,
         PlayerInteract,
         Player,
+        PlayerSelectEntity,
         EntityTurn,
     }
     public static BattleState battleState;
@@ -25,6 +26,7 @@ public class BattleManager : MonoBehaviour
     public GameObject playerInventoryUI;
     public GameObject playerInteractUI;
     public GameObject entityUI;
+    public GameObject entitySelectorUI;
     public Dictionary<BattleState, GameObject> currentUI;
     void Start()
     {
@@ -34,6 +36,7 @@ public class BattleManager : MonoBehaviour
             { BattleState.PlayerMagic, playerMagicUI },
             { BattleState.PlayerInventory, playerInventoryUI },
             { BattleState.PlayerInteract, playerInteractUI },
+            { BattleState.PlayerSelectEntity, entitySelectorUI },
             { BattleState.EntityTurn, entityUI },
 
         };
@@ -120,6 +123,7 @@ public class BattleManager : MonoBehaviour
             BattleState.PlayerMagic,
             BattleState.PlayerInventory,
             BattleState.PlayerInteract,
+            BattleState.PlayerSelectEntity,
         };
         foreach (BattleState state in playerStates)
         {
@@ -127,10 +131,33 @@ public class BattleManager : MonoBehaviour
         };
         return false;
     }
+    // This is called when we want to select an enemy
+    public void SelectEntity(BattleState nextState)
+    {
+        EntitySelector.nextBattleState = nextState;
+        battleState = BattleState.PlayerSelectEntity;
+    }
+
+    #region Button Functions
+    public void AttackSelectEntity()
+    {
+        SelectEntity(BattleState.PlayerAttack);
+    }
+
+
+
+    #endregion
+
+    // The attack UI called when enemy is selected
     public void AttackUI()
     {
         battleState = BattleState.PlayerAttack;
         Instantiate(Resources.Load("AttackBox"));
+    }
+    // Executes a turn if you select the enemy
+    public void ExecuteTurnOnEnemy()
+    {
+        if (battleState == BattleState.PlayerAttack) AttackUI();
     }
 
 }

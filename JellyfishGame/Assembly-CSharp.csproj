@@ -86,6 +86,8 @@
     <Compile Include="Assets\Scripts\Battle\Bullet\MoveTowards.cs" />
     <Compile Include="Assets\Scripts\Battle\BulletSpray.cs" />
     <Compile Include="Assets\Scripts\Battle\EnemyAct.cs" />
+    <Compile Include="Assets\Scripts\Battle\EntitySelector.cs" />
+    <Compile Include="Assets\Scripts\Battle\NewBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\Battle\PlayerAct.cs" />
     <Compile Include="Assets\Scripts\Battle\RegAttack\AttackBox.cs" />
     <Compile Include="Assets\Scripts\Battle\RegAttack\AttackSlider.cs" />
