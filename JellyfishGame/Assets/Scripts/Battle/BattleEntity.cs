@@ -12,6 +12,8 @@ public class BattleEntity : MonoBehaviour
     SpriteRenderer spRenderer;
     public int n, i;
     SpriteRenderer selectUI;
+    public HPBox hpbox;
+    public BattleManager battleManager;
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +47,7 @@ public class BattleEntity : MonoBehaviour
     {
         spRenderer.enabled = BattleManager.isItPlayerTurn();
         SetPosition();
+        hpbox.SetHP(hp, startHP);
 
         // If we arent selecting any entities there is no need to show the select sprite.
         if (BattleManager.battleState != BattleManager.BattleState.PlayerSelectEntity) 

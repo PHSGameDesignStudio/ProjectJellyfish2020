@@ -28,8 +28,10 @@ public class BattleManager : MonoBehaviour
     public GameObject entityUI;
     public GameObject entitySelectorUI;
     public Dictionary<BattleState, GameObject> currentUI;
+    public static string name;
     void Start()
     {
+        name = gameObject.name;
         battleState = BattleState.PlayerMain;
         currentUI = new Dictionary<BattleState, GameObject>() {
             { BattleState.PlayerMain, playerMainUI },
@@ -158,6 +160,15 @@ public class BattleManager : MonoBehaviour
     public void ExecuteTurnOnEnemy()
     {
         if (battleState == BattleState.PlayerAttack) AttackUI();
+    }
+
+    public static BattleManager GetScript()
+    {
+        return GetObj().GetComponent<BattleManager>();
+    }
+    public static GameObject GetObj()
+    {
+        return GameObject.Find(name);
     }
 
 }

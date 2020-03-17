@@ -6,8 +6,11 @@ public class AttackBox : MonoBehaviour
 {
     public int numOfAttackAreas;
     public float max_x;
+    public BattleManager battleManager;
+    public ArrayList attackAreas;
     void Start()
     {
+        attackAreas = new ArrayList();
         for (int i = 0; i < numOfAttackAreas; i++)
         {
             var init_x = Random.Range((float)i / numOfAttackAreas, (float)(i + 1) / numOfAttackAreas);
@@ -15,11 +18,19 @@ public class AttackBox : MonoBehaviour
             var v = new Vector2(adjust_x, 0);
             var thisArea = Instantiate(Resources.Load("AttackArea"), v, Quaternion.identity) as GameObject;
             thisArea.transform.localScale = new Vector3(thisArea.transform.localScale.x * 0.7f, thisArea.transform.localScale.y);
+            attackAreas.Add(thisArea);
         }
     }
 
     // Update is called once per frame
     void Update()
     {
+    }
+    public void DestroyAreas()
+    {
+        foreach (GameObject area in attackAreas)
+        {
+            Destroy(area);
+        }
     }
 }
