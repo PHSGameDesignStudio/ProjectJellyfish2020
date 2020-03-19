@@ -31,6 +31,9 @@ public class BattlePlayerController : MonoBehaviour
         transform.position = new Vector2(Mathf.Clamp(transform.position.x, -boundlimit, boundlimit), Mathf.Clamp(transform.position.y, -boundlimit, boundlimit));
         cooldownTimer -= Time.deltaTime;
         // update player hp slider
+
+        
+        
         
     }
     private void OnTriggerEnter2D(Collider2D collision)
