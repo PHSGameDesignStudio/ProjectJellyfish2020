@@ -55,15 +55,22 @@ public class Bullet : MonoBehaviour
     }
 
     // Bullets don't need update functions. It is a simple bullet. This might change in the future.
-    public static GameObject Create(Vector2 pos, Vector2 velocity, float rotation, string tag = "Hostile", bool poolable = true, bool destroyable = false, bool usingPool = true)
+    public static GameObject Create(Vector2 pos, Vector2 velocity, float rotation, string tag = "Hostile", bool poolable = true, bool destroyable = false, bool usingPool = true, GameObject _bullet = null)
     {
+        // So we can spawn custom bullets [Shouldnt use pool with custom bullets]
+        GameObject objRef = defaultObj;
+        if (_bullet != null)
+        {
+            objRef = _bullet;
+        }
         GameObject returnBullet = null;
+        //
         if (usingPool)
         {
             returnBullet = BulletManager.Pooling.Get("bullet");
             BulletManager.Pooling.Remove(returnBullet);
         }
-        if (returnBullet == null) returnBullet = Instantiate(defaultObj, pos, Quaternion.identity) as GameObject;
+        if (returnBullet == null) returnBullet = Instantiate(objRef, pos, Quaternion.identity) as GameObject;
         // returnBullet.GetComponent<ObjectType>().SetWantedComponents();
         returnBullet.GetComponent<Bullet>().determineIsPoolable = poolable;
         returnBullet.GetComponent<Bullet>().determineIsDestroyable = destroyable;

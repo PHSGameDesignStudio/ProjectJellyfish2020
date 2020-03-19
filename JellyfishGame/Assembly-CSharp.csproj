@@ -88,6 +88,8 @@
     <Compile Include="Assets\Scripts\Battle\EnemyAct.cs" />
     <Compile Include="Assets\Scripts\Battle\EntitySelector.cs" />
     <Compile Include="Assets\Scripts\Battle\NewBehaviourScript.cs" />
+    <Compile Include="Assets\Scripts\Battle\Player\BattlePlayer.cs" />
+    <Compile Include="Assets\Scripts\Battle\Player\BattlePlayerController.cs" />
     <Compile Include="Assets\Scripts\Battle\PlayerAct.cs" />
     <Compile Include="Assets\Scripts\Battle\RegAttack\AttackBox.cs" />
     <Compile Include="Assets\Scripts\Battle\RegAttack\AttackSlider.cs" />
@@ -102,12 +104,15 @@
     <Compile Include="Assets\Scripts\Player\Item_Manager.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\RandomX.cs" />
+    <Compile Include="Assets\Scripts\SFXManager.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets\Fonts\fontinfo.txt" />
+    <None Include="Assets\Sprites\Bullets\bulletsprites-cred.txt" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\Audio\SFX\soundeffects-credit.txt" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\Extensions\2d-extras-2018.3\Assets\Tilemap\Brushes\Tint Brush Smooth\Shaders\TintedTilemap.shader" />
@@ -120,6 +125,7 @@
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\Resources\Sprites\bulletsprites-cred.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />

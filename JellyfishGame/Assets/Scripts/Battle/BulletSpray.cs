@@ -30,8 +30,12 @@ public class BulletSpray : MonoBehaviour
         sprayRots.Add(BulletManager.Pointers.Dirs[6], new float[2] { -90, 0 }); // Third Quadrant
         sprayRots.Add(BulletManager.Pointers.Dirs[7], new float[2] { -90, -180 }); // Fourth Quadrant
 
+        // Setting Random Quad
+        mode = Random.Range(0, 4);
+
         NewPos();
         timer = scriptTime;
+        
     }
 
     // Update is called once per frame
@@ -66,11 +70,12 @@ public class BulletSpray : MonoBehaviour
         var r = 180f; // Depending on the quadrant you need a different rotation
         if (mode == 2 || mode == 3) r = 0f; // QUAD 3 || 4 -> 0f ; QUAD 1 || 2 -> 180f
 
-        var b = Bullet.Create(transform.position, Vector2.zero, Random.Range(r - 45f, r + 45f)).GetComponent<Bullet>();
+        var b = Bullet.Create(transform.position, Vector2.zero, Random.Range(r - 45f, r + 45f), _bullet: Resources.Load("Bullets/fire") as GameObject).GetComponent<Bullet>();
         bullets.Add(b);
         b.transform.SetParent(transform);
         b.useTranslateFeatures = true;
         b.translatedVelocity = new Vector2(0, bulletSpeed);
+        
         bulletTimer = timePerBullet;
     }
     

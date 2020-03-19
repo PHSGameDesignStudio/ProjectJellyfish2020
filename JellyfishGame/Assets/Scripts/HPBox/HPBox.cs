@@ -9,9 +9,9 @@ public class HPBox : MonoBehaviour
         var text = transform.Find("Text").GetComponent<TMPro.TextMeshPro>();
         var hpGraphics = transform.Find("Base").transform.Find("hpGraphics");
         var y = hp / totalhp;
-        if (y <= 0.1f) y = 0;
+        if (y <= 0.05f) y = 0;
         hpGraphics.transform.localScale = new Vector3(hpGraphics.transform.localScale.x, y);
-        text.text = System.Convert.ToString(hp) + "/" + System.Convert.ToString(totalhp);
+        text.text = hp.ToString() + "/" + totalhp.ToString();
     }
     public void SetColor(Color color)
     {

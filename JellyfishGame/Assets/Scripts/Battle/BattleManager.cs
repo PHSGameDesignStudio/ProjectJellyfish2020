@@ -28,10 +28,10 @@ public class BattleManager : MonoBehaviour
     public GameObject entityUI;
     public GameObject entitySelectorUI;
     public Dictionary<BattleState, GameObject> currentUI;
-    public static string name;
+    public static string objName;
     void Start()
     {
-        name = gameObject.name;
+        objName = gameObject.name;
         battleState = BattleState.PlayerMain;
         currentUI = new Dictionary<BattleState, GameObject>() {
             { BattleState.PlayerMain, playerMainUI },
@@ -54,9 +54,19 @@ public class BattleManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        print(battleState.ToString());
         if (battleState == BattleState.EntityTurn)
             if (isAllBattlesOver())
+            {
                 battleState = BattleState.PlayerMain;
+
+                // Setting attacks back to false so we can redo the entire process
+                foreach (GameObject entity in entities)
+                {
+                    var e = entity.GetComponent<BattleEntity>();
+                    e.isAttackDone = false;
+                }
+            }
 
         foreach (var item in currentUI)
         {
@@ -78,17 +88,20 @@ public class BattleManager : MonoBehaviour
     }
     bool isAllBattlesOver()
     {
+        print("b --");
         if (entities.Count != 0)
         {
             for (int i = 0; i < entities.Count; i++)
             {
                 // If One of the Battles are not over
                 var entity = entities[i] as GameObject;
+                print(entity.GetComponent<BattleEntity>().isAttackDone);
                 if (!entity.GetComponent<BattleEntity>().isAttackDone)
                     return false;
             }
             return true;
         }
+        print("b --");
         return false;
         // If no falses have been returned we can assume true.
 
@@ -168,7 +181,7 @@ public class BattleManager : MonoBehaviour
     }
     public static GameObject GetObj()
     {
-        return GameObject.Find(name);
+        return GameObject.Find(objName);
     }
 
 }

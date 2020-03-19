@@ -133,6 +133,8 @@ MonoBehaviour:
   bulletCooldown: 0.35
   bulletSpeed: 5
   isRandom: 1
+  usingCustomSprite: 1
+  customSprite: {fileID: 21300000, guid: 9a870e5d15ecf204baef997cc5c83cf5, type: 3}
 --- !u!114 &3668364086890405800
 MonoBehaviour:
   m_ObjectHideFlags: 0

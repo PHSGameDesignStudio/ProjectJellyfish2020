@@ -45,6 +45,7 @@ public class MoveTowards : MonoBehaviour
             }
             if (fadeTimer <= 0)
             {
+                GetComponent<BattleEntityAttack>().entity.isAttackDone = true;
                 Destroy(gameObject);
             }
         }

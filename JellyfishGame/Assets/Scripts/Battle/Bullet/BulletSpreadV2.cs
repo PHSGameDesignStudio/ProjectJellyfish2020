@@ -10,6 +10,8 @@ public class BulletSpreadV2 : MonoBehaviour
     public float bulletCooldown;
     public float bulletSpeed;
     public bool isRandom = false;
+    public bool usingCustomSprite = false;
+    public Sprite customSprite;
     float[] rots;
     float bulletTimer;
 
@@ -23,8 +25,15 @@ public class BulletSpreadV2 : MonoBehaviour
         if (bulletTimer <= 0)
         {
             DetermineRots();
-            Bullet.Attack.UsingTransform(transform, numOfBullets, bulletSpeed, rots);
-            bulletTimer = bulletCooldown;
+            var bullets = Bullet.Attack.UsingTransform(transform, numOfBullets, bulletSpeed, rots);
+            if (usingCustomSprite)
+            {
+                foreach (GameObject bullet in bullets)
+                {
+                    bullet.GetComponent<SpriteRenderer>().sprite = customSprite;
+                }
+            }
+            bulletTimer = bulletCooldown; 
         }
         bulletTimer -= Time.deltaTime;
     }

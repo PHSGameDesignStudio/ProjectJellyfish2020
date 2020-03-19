@@ -12,11 +12,13 @@ public class AttackSlider : MonoBehaviour
     int hitpts = 0;
     float endX; // Where the slider ends
     bool attackSent = false;
+    ArrayList feedbackItems;
     void Start()
     {
         attackKey = KeyCode.Return;
         endX = Mathf.Abs(transform.position.x);
         print(endX);
+        feedbackItems = new ArrayList();
     }
 
     // Update is called once per frame
@@ -28,6 +30,7 @@ public class AttackSlider : MonoBehaviour
                 if (isInGoal && !sliderHit)
                 {
                     hitpts += 1;
+                    SFXManager.ResetSFX("SwordDraw" + hitpts); // It will add different hit points so we can have changes in pitch.
                 }
                 sliderHit = true;
                 SliderHit();
@@ -39,8 +42,9 @@ public class AttackSlider : MonoBehaviour
         print(hitpts);
         if (transform.position.x > endX && !attackSent)
         {
-            DamageEntity();
             attackSent = true;
+            SFXManager.ResetSFX("EnemyHit");
+            DamageEntity();
         }
         
     }
@@ -50,6 +54,7 @@ public class AttackSlider : MonoBehaviour
         Destroy(hitFeedback.GetComponent<AttackSlider>());
         hitFeedback.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0.5f);
         hitFeedback.transform.localScale = new Vector3(0.1f, hitFeedback.transform.localScale.y, 0);
+        feedbackItems.Add(hitFeedback);
     }
     public void DamageEntity()
     {
@@ -58,8 +63,14 @@ public class AttackSlider : MonoBehaviour
         BattleManager.GetScript().StartBattle();
         var attBox = transform.parent.GetComponent<AttackBox>();
         attBox.DestroyAreas();
+        DestroyFeedbackItems();
         Destroy(attBox.gameObject);
         Destroy(gameObject);
+    }
+    public void DestroyFeedbackItems()
+    {
+        foreach (GameObject item in feedbackItems)
+            Destroy(item);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

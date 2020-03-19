@@ -37,6 +37,10 @@ public class BattleEntity : MonoBehaviour
             print(SceneManager.GetActiveScene().name);
             obj.GetComponent<BattleEntityAttack>().entity = GetComponent<BattleEntity>(); // Gives a reference to parent
             print("YAY ATTACK" + obj.scene.name);
+        } else
+        {
+            isAttackDone = true;
+            // Make it so that this entity dissapears, maybe do it in animation or crap!
         }
     }
     public void Damage(int hpDec)
