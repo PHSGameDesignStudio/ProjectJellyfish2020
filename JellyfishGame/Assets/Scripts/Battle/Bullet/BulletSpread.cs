@@ -21,15 +21,16 @@ public class BulletSpread : MonoBehaviour
         } 
         if (runTimer) timer -= Time.deltaTime;
     }
-    public GameObject[] Attack()
+    public GameObject[] Attack(GameObject customObj = null)
     {
-        if (translate) return Bullet.Attack.UsingTransform(transform, attackNumber, bulletSpeed, BulletManager.Pointers.Rots, isParent);
-        else return Bullet.Attack.UsingVector(transform, attackNumber, bulletSpeed, BulletManager.Pointers.Dirs, isParent);
+        if (translate) return Bullet.Attack.UsingTransform(transform, attackNumber, bulletSpeed, BulletManager.Pointers.Rots, isParent, _customObject: customObj);
+        else return Bullet.Attack.UsingVector(transform, attackNumber, bulletSpeed, BulletManager.Pointers.Dirs, isParent, _customObject: customObj);
     }
-    public static GameObject Create(Vector2 pos, int attackNumber, float cooldown = 1, bool runTimer = true, bool translate = false, bool isParent = true) {
+    public static GameObject Create(Vector2 pos, int attackNumber, float cooldown = 1, float bulletSpeed = 5, bool runTimer = true, bool translate = false, bool isParent = true) {
         GameObject rObj = Instantiate(dfBulletSpread, pos, Quaternion.identity) as GameObject;
         BulletSpread rScript = rObj.GetComponent<BulletSpread>();
         rScript.attackNumber = attackNumber;
+        rScript.bulletSpeed = bulletSpeed;
         rScript.cooldown = rScript.timer = cooldown;
         rScript.runTimer = runTimer;
         rScript.translate = translate;

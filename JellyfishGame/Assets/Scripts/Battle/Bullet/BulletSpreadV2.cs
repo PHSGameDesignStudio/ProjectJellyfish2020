@@ -8,10 +8,12 @@ public class BulletSpreadV2 : MonoBehaviour
     public float minRotation;
     public float maxRotation;
     public float bulletCooldown;
+    public float minBulletSpeed;
     public float bulletSpeed;
     public bool isRandom = false;
     public bool usingCustomSprite = false;
     public Sprite customSprite;
+    public GameObject customObj = null;
     float[] rots;
     float bulletTimer;
 
@@ -19,13 +21,16 @@ public class BulletSpreadV2 : MonoBehaviour
     {
         rots = new float[numOfBullets];
         bulletTimer = bulletCooldown;
+
+        if (minBulletSpeed == 0f)
+            minBulletSpeed = bulletSpeed;
     }
     public void Update()
     {
         if (bulletTimer <= 0)
         {
             DetermineRots();
-            var bullets = Bullet.Attack.UsingTransform(transform, numOfBullets, bulletSpeed, rots);
+            var bullets = Bullet.Attack.UsingTransform(transform, numOfBullets, bulletSpeed, rots, _customObject: customObj);
             if (usingCustomSprite)
             {
                 foreach (GameObject bullet in bullets)

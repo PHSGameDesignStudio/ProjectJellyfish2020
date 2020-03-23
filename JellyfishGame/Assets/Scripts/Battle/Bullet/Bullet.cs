@@ -29,12 +29,12 @@ public class Bullet : MonoBehaviour
     public struct Attack
     {
         // An attack but using Transform.Translate so rotations are possible, not great for straight directions.
-        public static GameObject[] UsingTransform(Transform transform, int bulletNumber, float bulletSpeed, float[] pointRots, bool isParent = false)
+        public static GameObject[] UsingTransform(Transform transform, int bulletNumber, float bulletSpeed, float[] pointRots, bool isParent = false, GameObject _customObject = null)
         {
             GameObject[] rBullets = new GameObject[bulletNumber];
             for (int i = 0; i < bulletNumber; i++)
             {
-                rBullets[i] = Bullet.Create(transform.position, Vector2.zero, pointRots[i]);
+                rBullets[i] = Bullet.Create(transform.position, Vector2.zero, pointRots[i], _bullet: _customObject);
                 rBullets[i].GetComponent<Bullet>().useTranslateFeatures = true;
                 rBullets[i].GetComponent<Bullet>().translatedVelocity = Vector2.up * bulletSpeed;
                 if (isParent) rBullets[i].transform.SetParent(transform, true);
@@ -42,12 +42,12 @@ public class Bullet : MonoBehaviour
             return rBullets;
         }
         // An attack but using Vector2.MoveTowards. Great if you want a straight location to pin point to.
-        public static GameObject[] UsingVector(Transform transform, int bulletNumber, float bulletSpeed, Vector2[] pointDirs, bool isParent = false)
+        public static GameObject[] UsingVector(Transform transform, int bulletNumber, float bulletSpeed, Vector2[] pointDirs, bool isParent = false, GameObject _customObject = null)
         {
             GameObject[] rBullets = new GameObject[bulletNumber];
             for (int i = 0; i < bulletNumber; i++)
             {
-                rBullets[i] = Bullet.Create(transform.position, pointDirs[i] * bulletSpeed, 0);
+                rBullets[i] = Bullet.Create(transform.position, pointDirs[i] * bulletSpeed, 0, _bullet: _customObject);
                 if (isParent) rBullets[i].transform.SetParent(transform, true);
             }
             return rBullets;

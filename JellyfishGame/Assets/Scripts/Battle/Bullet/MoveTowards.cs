@@ -9,6 +9,7 @@ public class MoveTowards : MonoBehaviour
     bool usingFade = true;
     public float fadeTime = 0.5f;
     public bool useRandomX;
+    public bool useRandomY;
 
     float fadeTimer;
     void Start()
@@ -20,6 +21,12 @@ public class MoveTowards : MonoBehaviour
         if (useRandomX) {
             var x = destination.x;
             pos.x = destination.x = Random.Range(-x, x);
+            transform.position = pos;
+        }
+        if (useRandomY)
+        {
+            var y = destination.y;
+            pos.y = destination.y = Random.Range(-y, y);
             transform.position = pos;
         }
     }

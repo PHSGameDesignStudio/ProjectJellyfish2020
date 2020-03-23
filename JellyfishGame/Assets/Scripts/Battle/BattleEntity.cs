@@ -9,7 +9,7 @@ public class BattleEntity : MonoBehaviour
     float hp;
     public GameObject[] attackOptions;
     public bool isAttackDone;
-    SpriteRenderer spRenderer;
+    public SpriteRenderer spRenderer = null;
     public int n, i;
     SpriteRenderer selectUI;
     public HPBox hpbox;
@@ -20,7 +20,7 @@ public class BattleEntity : MonoBehaviour
     {
         hp = startHP;
         DontDestroyOnLoad(gameObject);
-        spRenderer = GetComponent<SpriteRenderer>();
+        if (spRenderer == null) spRenderer = GetComponent<SpriteRenderer>();
         selectUI = transform.Find("selectUI").GetComponent<SpriteRenderer>();
     }
 
@@ -33,9 +33,7 @@ public class BattleEntity : MonoBehaviour
         {
             GameObject obj = Instantiate(attackOptions[0]) as GameObject; // Creates new attack
             obj.transform.SetParent(null);
-            SceneManager.MoveGameObjectToScene(obj, SceneManager.GetActiveScene());
-            print(SceneManager.GetActiveScene().name);
-            obj.GetComponent<BattleEntityAttack>().entity = GetComponent<BattleEntity>(); // Gives a reference to parent
+            obj.GetComponent<BattleEntityAttack>().entity = this; // Gives a reference to parent
             print("YAY ATTACK" + obj.scene.name);
         } else
         {

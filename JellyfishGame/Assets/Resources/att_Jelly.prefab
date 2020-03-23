@@ -106,7 +106,7 @@ Animator:
   m_GameObject: {fileID: 3668364086890405798}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c890214a12a18e341bb0a03fcda39bc9, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9e717dfa38f18e14792b12d5444a9c01, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -131,10 +131,12 @@ MonoBehaviour:
   minRotation: 135
   maxRotation: 225
   bulletCooldown: 0.35
+  minBulletSpeed: 0
   bulletSpeed: 5
   isRandom: 1
   usingCustomSprite: 1
   customSprite: {fileID: 21300000, guid: 9a870e5d15ecf204baef997cc5c83cf5, type: 3}
+  customObj: {fileID: 0}
 --- !u!114 &3668364086890405800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,6 +153,7 @@ MonoBehaviour:
   speed: 2
   fadeTime: 0.5
   useRandomX: 1
+  useRandomY: 0
 --- !u!114 &5517104359336661764
 MonoBehaviour:
   m_ObjectHideFlags: 0

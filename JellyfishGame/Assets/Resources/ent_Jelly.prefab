@@ -132,6 +132,7 @@ MonoBehaviour:
   n: 0
   i: 0
   hpbox: {fileID: 7278451023571841325}
+  battleManager: {fileID: 0}
 --- !u!212 &3074695888725039460
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -257,15 +258,15 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 6582220641324824036, guid: e23ab814e9bf45748a57c6e04d583a01,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 2023754243401628750, guid: e23ab814e9bf45748a57c6e04d583a01,
         type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6582220641324824036, guid: e23ab814e9bf45748a57c6e04d583a01,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7287383401582583850, guid: e23ab814e9bf45748a57c6e04d583a01,
         type: 3}

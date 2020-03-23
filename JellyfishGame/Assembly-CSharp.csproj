@@ -91,8 +91,10 @@
     <Compile Include="Assets\Scripts\Battle\Player\BattlePlayer.cs" />
     <Compile Include="Assets\Scripts\Battle\Player\BattlePlayerController.cs" />
     <Compile Include="Assets\Scripts\Battle\PlayerAct.cs" />
+    <Compile Include="Assets\Scripts\Battle\RandomBullet.cs" />
     <Compile Include="Assets\Scripts\Battle\RegAttack\AttackBox.cs" />
     <Compile Include="Assets\Scripts\Battle\RegAttack\AttackSlider.cs" />
+    <Compile Include="Assets\Scripts\Battle\RotateBy.cs" />
     <Compile Include="Assets\Scripts\ButtonSelect.cs" />
     <Compile Include="Assets\Scripts\CameraData.cs" />
     <Compile Include="Assets\Scripts\Fade.cs" />
@@ -105,6 +107,7 @@
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\RandomX.cs" />
     <Compile Include="Assets\Scripts\SFXManager.cs" />
+    <Compile Include="Assets\Scripts\SpiralingSpread.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
