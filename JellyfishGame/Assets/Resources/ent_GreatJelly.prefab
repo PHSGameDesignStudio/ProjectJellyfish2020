@@ -224,9 +224,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de1c7242d7b8c5545ae65bdd36d33713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHP: 5
+  startHP: 30
   attackOptions:
-  - {fileID: 3668364086890405798, guid: 72909aabd2a55f14699af66d19536e66, type: 3}
+  - {fileID: 2558625781199690092, guid: 003b0f17fd97e044e9c939b3d4846264, type: 3}
+  - {fileID: 7591354809314875763, guid: 6d89d9fe51fc32043813607c194fc98c, type: 3}
+  - {fileID: 512542579612011702, guid: 524ebeefcf3de1c41a57a2ad02d837a2, type: 3}
   isAttackDone: 0
   spRenderer: {fileID: 2292411692737517594}
   n: 0
@@ -315,11 +317,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 6582220641324824036, guid: e23ab814e9bf45748a57c6e04d583a01,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 7287383401582583850, guid: e23ab814e9bf45748a57c6e04d583a01,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -339,6 +336,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6582220641324824036, guid: e23ab814e9bf45748a57c6e04d583a01,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8312214861162648603, guid: e23ab814e9bf45748a57c6e04d583a01,
         type: 3}

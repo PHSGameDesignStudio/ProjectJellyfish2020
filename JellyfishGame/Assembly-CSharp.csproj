@@ -100,6 +100,7 @@
     <Compile Include="Assets\Scripts\Fade.cs" />
     <Compile Include="Assets\Scripts\HPBox\HPBox.cs" />
     <Compile Include="Assets\Scripts\InstantiateRunner.cs" />
+    <Compile Include="Assets\Scripts\Laser.cs" />
     <Compile Include="Assets\Scripts\Player\CharacterController2D.cs" />
     <Compile Include="Assets\Scripts\Player\CharScript.cs" />
     <Compile Include="Assets\Scripts\Player\InventoryScript.cs" />
@@ -107,6 +108,7 @@
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\RandomX.cs" />
     <Compile Include="Assets\Scripts\SFXManager.cs" />
+    <Compile Include="Assets\Scripts\SpawnLasers.cs" />
     <Compile Include="Assets\Scripts\SpiralingSpread.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />

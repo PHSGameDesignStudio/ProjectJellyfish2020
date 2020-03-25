@@ -52,8 +52,7 @@ public class SpiralingSpread : MonoBehaviour
                 bulletSpreads.RemoveAt(0);
             }
 
-            foreach (var bullet in bullets)
-                bullet.transform.localScale = Vector3.one * 3f / 4f;
+            
             // If we want a customSprite the custom Sprite will be applied to each of the bullets
             if (customSprite != null)
             {

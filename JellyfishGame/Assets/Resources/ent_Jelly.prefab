@@ -127,8 +127,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startHP: 5
   attackOptions:
-  - {fileID: 3668364086890405798, guid: 72909aabd2a55f14699af66d19536e66, type: 3}
+  - {fileID: 2558625781199690092, guid: 003b0f17fd97e044e9c939b3d4846264, type: 3}
   isAttackDone: 0
+  spRenderer: {fileID: 3074695888725039460}
   n: 0
   i: 0
   hpbox: {fileID: 7278451023571841325}
@@ -263,11 +264,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 6582220641324824036, guid: e23ab814e9bf45748a57c6e04d583a01,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 7287383401582583850, guid: e23ab814e9bf45748a57c6e04d583a01,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -287,6 +283,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6582220641324824036, guid: e23ab814e9bf45748a57c6e04d583a01,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8312214861162648603, guid: e23ab814e9bf45748a57c6e04d583a01,
         type: 3}

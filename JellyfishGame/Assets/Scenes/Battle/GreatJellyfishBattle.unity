@@ -811,7 +811,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fbbc0827f0a9244d82e011d99cb478e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 4
   cooldown: 0.5
   boundlimit: 4
 --- !u!1 &274326954
@@ -2586,7 +2586,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &421310798
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4659,7 +4659,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -4833,11 +4833,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 6582220641324824036, guid: e23ab814e9bf45748a57c6e04d583a01,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 7287383401582583850, guid: e23ab814e9bf45748a57c6e04d583a01,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -4857,6 +4852,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6582220641324824036, guid: e23ab814e9bf45748a57c6e04d583a01,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8312214861162648603, guid: e23ab814e9bf45748a57c6e04d583a01,
         type: 3}
@@ -5612,11 +5612,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RefEntities:
-  - {fileID: 6825200450746839807, guid: 9f8173af6407f374381da294a9fb34c8, type: 3}
-  - {fileID: 4614225916077661038, guid: 42fdd030a453e45428a5a12565db7be0, type: 3}
-  - {fileID: 6955160947211856274, guid: 29c7f52ba860bcf46a98ecbd05e13db8, type: 3}
-  minEnemies: 1
-  maxEnemies: 3
+  - {fileID: 4712933376910525049, guid: ba574270273556c4fb0f16ce9a3ba02a, type: 3}
+  minEnemies: 0
+  maxEnemies: 0
   playerMainUI: {fileID: 421310797}
   playerMagicUI: {fileID: 2109554417}
   playerInventoryUI: {fileID: 1864496507}

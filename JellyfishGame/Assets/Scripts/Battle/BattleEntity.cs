@@ -31,7 +31,9 @@ public class BattleEntity : MonoBehaviour
         transform.SetParent(null);
         if (hp > 0)
         {
-            GameObject obj = Instantiate(attackOptions[0]) as GameObject; // Creates new attack
+            var o = Random.Range(0, attackOptions.Length);
+            print("AO: " + o);
+            GameObject obj = Instantiate(attackOptions[o]) as GameObject; // Creates new attack
             obj.transform.SetParent(null);
             obj.GetComponent<BattleEntityAttack>().entity = this; // Gives a reference to parent
             print("YAY ATTACK" + obj.scene.name);
@@ -48,6 +50,7 @@ public class BattleEntity : MonoBehaviour
     public void Update()
     {
         spRenderer.enabled = BattleManager.isItPlayerTurn();
+        gameObject.SetActive(!isAttackDone);
         SetPosition();
         hpbox.SetHP(hp, startHP);
 
@@ -57,10 +60,19 @@ public class BattleEntity : MonoBehaviour
     }
     public void SetPosition()
     {
-        transform.position = new Vector3(
-            (CameraData.width/2) * (5f / 6f),
-            (((float)i / (float)n) * (CameraData.height / 2f)) - (CameraData.height / 4f)
-        );
+        if (n != 0)
+        {
+            transform.position = new Vector3(
+                (CameraData.width / 2) * (5f / 6f),
+                (((float)i / (float)n) * (CameraData.height / 2f)) - (CameraData.height / 4f)
+            );
+        }
+        else
+        {
+            transform.position = new Vector3(
+                (CameraData.width / 2) * (5f / 6f), 0
+            );
+        }
     }
     
 

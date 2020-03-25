@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 2558625781199690089}
   - component: {fileID: 2558625781199690134}
   m_Layer: 0
-  m_Name: att_GreatJellyfish_SpiralingSpreads
-  m_TagString: Untagged
+  m_Name: att_GreatJellyfish_SpiralingSpreads_Random
+  m_TagString: Hostile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_Sprite: {fileID: 21300000, guid: 8eaf01d20e997184aa4685dc93a40025, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -100,7 +100,7 @@ MonoBehaviour:
   rotationSpeed: 30
   maxBulletSpreads: 20
   isRandomRotation: 1
-  bulletCooldown: 0.3
+  bulletCooldown: 0.5
   customObject: {fileID: 0}
   customSprite: {fileID: 21300000, guid: 0825c06bc6240f049820238c25218214, type: 3}
 --- !u!114 &2558625781199690088

@@ -54,7 +54,7 @@ public class BattleManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(battleState.ToString());
+        //print(battleState.ToString());
         if (battleState == BattleState.EntityTurn)
             if (isAllBattlesOver())
             {
