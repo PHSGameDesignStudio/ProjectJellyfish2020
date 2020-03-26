@@ -5371,6 +5371,7 @@ MonoBehaviour:
   - {fileID: 6825200450746839807, guid: 9f8173af6407f374381da294a9fb34c8, type: 3}
   - {fileID: 4614225916077661038, guid: 42fdd030a453e45428a5a12565db7be0, type: 3}
   - {fileID: 6955160947211856274, guid: 29c7f52ba860bcf46a98ecbd05e13db8, type: 3}
+  - {fileID: 9027818372988938084, guid: 3dc6f289ae723e84ca7175044e897887, type: 3}
   minEnemies: 1
   maxEnemies: 3
   playerMainUI: {fileID: 224594493}
@@ -5554,11 +5555,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 6582220641324824036, guid: e23ab814e9bf45748a57c6e04d583a01,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 7287383401582583850, guid: e23ab814e9bf45748a57c6e04d583a01,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -5578,6 +5574,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6582220641324824036, guid: e23ab814e9bf45748a57c6e04d583a01,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8312214861162648603, guid: e23ab814e9bf45748a57c6e04d583a01,
         type: 3}

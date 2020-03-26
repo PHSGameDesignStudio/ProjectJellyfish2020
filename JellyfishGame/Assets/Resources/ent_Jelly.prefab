@@ -127,7 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startHP: 5
   attackOptions:
-  - {fileID: 2558625781199690092, guid: 003b0f17fd97e044e9c939b3d4846264, type: 3}
+  - {fileID: 3668364086890405798, guid: 72909aabd2a55f14699af66d19536e66, type: 3}
   isAttackDone: 0
   spRenderer: {fileID: 3074695888725039460}
   n: 0
