@@ -3,10 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
+<<<<<<< HEAD
   tags:
   - Hostile
   - AttackGoal
   - AttackArea
+=======
+  tags: []
+>>>>>>> inventory
   layers:
   - Default
   - TransparentFX
@@ -16,8 +20,13 @@ TagManager:
   - UI
   - 
   - 
+<<<<<<< HEAD
   - Halos
   - PostProcessing
+=======
+  - Text
+  - 
+>>>>>>> inventory
   - 
   - 
   - 
