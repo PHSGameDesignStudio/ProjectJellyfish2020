@@ -16,7 +16,6 @@ public class CardNavigation : MonoBehaviour
     public float cardDistance;
     public float selectionCooldown;
     float selectionTimer;
-    public Camera cam;
     public void Start()
     {
         cardsWithMagicLvl = GetCardsWithMagicLevel();
@@ -34,7 +33,7 @@ public class CardNavigation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        cam.transform.position = new Vector3(cardDistance * selected, 0, -10);
+        transform.position = new Vector3(cardDistance * selected, 0, -10);
         // Update Selected
         var axis = Input.GetAxisRaw("Horizontal");
         if ( axis != 0 && selectionTimer <= 0)

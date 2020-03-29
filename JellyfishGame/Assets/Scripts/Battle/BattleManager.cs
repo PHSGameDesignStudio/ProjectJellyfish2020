@@ -158,6 +158,14 @@ public class BattleManager : MonoBehaviour
     {
         SelectEntity(BattleState.PlayerAttack);
     }
+    public void MagicSelectEntity()
+    {
+        SelectEntity(BattleState.PlayerMagic);
+    }
+    public void ItemsSelectEntity()
+    {
+        SelectEntity(BattleState.PlayerMagic);
+    }
 
 
 
@@ -173,6 +181,9 @@ public class BattleManager : MonoBehaviour
     public void ExecuteTurnOnEnemy()
     {
         if (battleState == BattleState.PlayerAttack) AttackUI();
+        if (battleState == BattleState.PlayerMagic) {
+            Instantiate(Resources.Load("Magic/Magic Nav") as GameObject);
+        }
     }
 
     public static BattleManager GetScript()
