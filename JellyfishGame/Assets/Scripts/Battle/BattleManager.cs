@@ -29,8 +29,11 @@ public class BattleManager : MonoBehaviour
     public GameObject entitySelectorUI;
     public Dictionary<BattleState, GameObject> currentUI;
     public static string objName;
+
+    public static BattleManager manager;
     void Start()
     {
+        manager = this;
         objName = gameObject.name;
         battleState = BattleState.PlayerMain;
         currentUI = new Dictionary<BattleState, GameObject>() {
@@ -164,7 +167,7 @@ public class BattleManager : MonoBehaviour
     }
     public void ItemsSelectEntity()
     {
-        SelectEntity(BattleState.PlayerMagic);
+        battleState = BattleState.PlayerInventory;
     }
 
 

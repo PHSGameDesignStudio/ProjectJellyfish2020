@@ -5,13 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class BattlePlayer : MonoBehaviour
 {
-    int hp;
-    public int maxHp = 20;
+    public static BattlePlayer player;
     void Start()
     {
-        
-        hp = maxHp;
-        print(hp);
+        player = this;
         UpdateHPUI();
     }
 
@@ -22,23 +19,23 @@ public class BattlePlayer : MonoBehaviour
         transform.Find("PlayerController").gameObject.SetActive( BattleManager.battleState == BattleManager.BattleState.EntityTurn );
 
         // If HP <= 0 We want to go to death screen
-        if (hp <= 0) SceneManager.LoadScene("StelDed");
+        if (Player.hp <= 0) SceneManager.LoadScene("StelDed");
     }
     public void UpdateHPUI()
     {
         var hpBox = transform.Find("hpSlider").GetComponent<HPBox>();
-        hpBox.SetHP(hp, maxHp);
+        hpBox.SetHP(Player.hp, Player.maxHp);
         hpBox.SetColor(
-            Color.Lerp(Color.red, Color.green, (float)hp / (float)maxHp)
+            Color.Lerp(Color.red, Color.green, (float)Player.hp / (float)Player.maxHp)
         );
     }
     public int GetHP()
     {
-        return hp;
+        return Player.hp;
     }
     public void SetHP(int _hp)
     {
-        if (hp > 0)
-            hp = _hp;
+        if (Player.hp > 0)
+            Player.hp = _hp;
     }
 }

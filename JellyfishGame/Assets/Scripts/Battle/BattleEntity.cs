@@ -45,18 +45,31 @@ public class BattleEntity : MonoBehaviour
     }
     public void Damage(int hpDec)
     {
-        hp -= Mathf.Abs(hpDec);
+        if (hp == 1 && hpDec >= 1)
+        {
+            // Called when the player wants to destroy the entity
+            BattleManager.entities.Remove(gameObject); // removing the entities so we dont get null errors
+            Destroy(gameObject); // Destroying this object.
+        }
+        else
+        {
+            // So that the player has the chance to spare
+            hp -= Mathf.Abs(hpDec);
+            if (hp < 1) hp = 1;
+        }
     }
     public void Update()
     {
         spRenderer.enabled = BattleManager.isItPlayerTurn();
-        gameObject.SetActive(!isAttackDone);
+        //gameObject.SetActive(attackDone);
         SetPosition();
         hpbox.SetHP(hp, startHP);
 
         // If we arent selecting any entities there is no need to show the select sprite.
         if (BattleManager.battleState != BattleManager.BattleState.PlayerSelectEntity) 
             selectUI.enabled = false;
+
+        
     }
     public void SetPosition()
     {

@@ -3,14 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-<<<<<<< HEAD
   tags:
   - Hostile
-  - AttackGoal
+  - Helper
   - AttackArea
-=======
-  tags: []
->>>>>>> inventory
+  - AttackGoal
   layers:
   - Default
   - TransparentFX
@@ -20,13 +17,8 @@ TagManager:
   - UI
   - 
   - 
-<<<<<<< HEAD
-  - Halos
-  - PostProcessing
-=======
-  - Text
   - 
->>>>>>> inventory
+  - 
   - 
   - 
   - 
@@ -52,4 +44,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Layer1
+    uniqueID: 2822912871
     locked: 0

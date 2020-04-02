@@ -5,7 +5,8 @@ using UnityEngine;
 public class BattlePlayerController : MonoBehaviour
 {
     
-    public float speed = 5;
+    //public float speed = 5; commented this out bc Player.cs
+
     //public float dashSpeed = 15;
     //bool isDashing;
     //public float dashCooldown = 0.07f;
@@ -24,7 +25,7 @@ public class BattlePlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var s = speed;
+        var s = Player.speed;
         vel = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
         transform.position += (Vector3)vel * Time.deltaTime * s;

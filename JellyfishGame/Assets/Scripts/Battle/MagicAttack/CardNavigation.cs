@@ -52,6 +52,7 @@ public class CardNavigation : MonoBehaviour
                 ((Card)cardsWithMagicLvl[selected]).MinigameResourceName
             ));
             BattleManager.battleState = BattleManager.BattleState.Player;
+            PackUp(); // Time to pack up / destroy these objects
         }
         selectionTimer -= Time.deltaTime;
     }
@@ -76,5 +77,14 @@ public class CardNavigation : MonoBehaviour
             else
                 cardObj.transform.localScale = cardObj.GetComponent<CardBehaviour>().GetVariableLocalScale() * 1f;
         }   
+    }
+    // Destroys everything related to cards in game.
+    public void PackUp()
+    {
+        foreach (GameObject obj in cardObjects)
+        {
+            Destroy(obj);
+        }
+        Destroy(gameObject);
     }
 }
