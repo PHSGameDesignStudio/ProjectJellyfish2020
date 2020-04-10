@@ -58,7 +58,9 @@ public class AttackSlider : MonoBehaviour
     }
     public void DamageEntity()
     {
-        EntitySelector.GetSelectedEntity().GetComponent<BattleEntity>().Damage(hitpts);
+        var chancesToHit = 4; // this is the amount of chances spawned by AttackBox.cs
+        var realHitPts = ((float)hitpts / (float)chancesToHit) * Player.GetAttackDmg(); // multiply so we can change the amount of dmg
+        EntitySelector.GetSelectedEntity().GetComponent<BattleEntity>().Damage((int)realHitPts);
         BattleManager.battleState = BattleManager.BattleState.EntityTurn; // Need to call StartBattle();
         BattleManager.GetScript().StartBattle();
         var attBox = transform.parent.GetComponent<AttackBox>();

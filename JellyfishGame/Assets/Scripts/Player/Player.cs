@@ -7,8 +7,8 @@ public class Player : MonoBehaviour
     // Default Values
     public static int hp = -100;
     public static float speed = 5;
-    public static int attackDmg;
-    public static int magicDmg;
+    public static int attackDmg = 2;
+    public static int magicDmg = 4;
     public static int maxHp = 20;
     
 

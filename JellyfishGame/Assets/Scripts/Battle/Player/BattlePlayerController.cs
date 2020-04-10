@@ -25,7 +25,7 @@ public class BattlePlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var s = Player.speed;
+        var s = Player.GetSpeed();
         vel = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
         transform.position += (Vector3)vel * Time.deltaTime * s;
