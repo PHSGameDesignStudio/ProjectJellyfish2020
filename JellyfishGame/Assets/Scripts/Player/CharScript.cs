@@ -7,6 +7,7 @@ public class CharScript : MonoBehaviour
     public float rotationSpeed = 100.0f;
     public bool facingRight = true;
     public Animator animator;
+    private bool Stopped;
     // Update is called once per frame
     void Update()
     {
@@ -17,11 +18,13 @@ public class CharScript : MonoBehaviour
         if (Input.GetKey("w"))
         {
             transform.Translate(0, translation, 0);
-            animator.SetBool("Backwards", true);
+            animator.SetBool("Backward", true);
         }
-        else { animator.SetBool("Backwards", false); }
+        else { animator.SetBool("Backward", false); }
+        
         if (Input.GetKey("a"))
         {
+            Stopped = true;
             animator.SetBool("Walking", true);
             transform.Translate(-translation, 0, 0);
             if (!facingRight)
@@ -31,6 +34,7 @@ public class CharScript : MonoBehaviour
         }
         else if (Input.GetKey("d"))
         {
+            Stopped = true;
             animator.SetBool("Walking", true);
             transform.Translate(translation, 0, 0);
             if (facingRight)
@@ -38,13 +42,22 @@ public class CharScript : MonoBehaviour
                 Flip();
             }
         }
-        else { animator.SetBool("Walking", false); }
+        else { 
+            animator.SetBool("Walking", false);
+            if(Stopped)
+            { 
+                Flip();
+                Stopped = false;
+            }
+        }
+        
         if (Input.GetKey("s"))
         {
             animator.SetBool("Forward", true);
             transform.Translate(0, -translation, 0);
         }
-        else{animator.SetBool("Forward", false); }
+        else{animator.SetBool("Forward", false);
+        }
     }
     public void Flip()
     {
