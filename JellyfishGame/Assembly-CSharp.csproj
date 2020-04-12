@@ -129,6 +129,8 @@
     <Compile Include="Assets\Extensions\2d-extras-2018.3\Assets\Tilemap\Tiles\Weighted Random Tile\WeightedRandomTile.cs" />
     <Compile Include="Assets\Player_Manager.cs" />
     <Compile Include="Assets\Scripts\Player\CharScript.cs" />
+    <Compile Include="Assets\Text_Manager.cs" />
+    <Compile Include="Assets\Typewriter.cs" />
     <None Include="Assets\Cinemachine\ReleaseNotes.txt" />
     <None Include="Assets\Extensions\2d-extras-2018.3\Assets\Tilemap\Brushes\Tint Brush Smooth\Shaders\TintedTilemap.shader" />
     <None Include="Assets\Extensions\2d-extras-2018.3\Assets\Tilemap\Tiles\Rule Tile\ScriptTemplates\NewCustomRuleTile.cs.txt" />
