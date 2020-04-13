@@ -40,7 +40,7 @@ public class Typewriter : MonoBehaviour
     }
     public void CheckIf()
     {
-        if (Input.GetButton("Fire1") && AtEnd)
+        if (Input.GetKeyDown(KeyCode.Space) && AtEnd)
         {
             if (currentlyDisplayingText+1 == goatText.Length)
             {
