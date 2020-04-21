@@ -51,6 +51,9 @@ public class BattleManager : MonoBehaviour
             entities = new ArrayList();
             InitEntities();
         }
+        // We don't want to use mouse
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
     // WAIT A SEC IM NOT CHANGING ENTITIES!
 

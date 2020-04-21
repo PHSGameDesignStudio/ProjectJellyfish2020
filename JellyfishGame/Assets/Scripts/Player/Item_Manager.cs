@@ -2,10 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using TMPro;
 //mental note, make sure if script is actually getting GameObject
 public class Item_Manager : MonoBehaviour
 {
+    public Text EquipButtonText; // This is the button that is equipping/using items
+    private string useButtonTextStr = "Use";
+    // ^^ Can be out of three options "use", "equip", "unequip".
+
+
     Button[] Boxes = new Button[8];
     public static Item[] items = new Item[8] { // Temporary inventory, testing. When the player starts the game they'll obviously start with nothing.
             Items.sushi,
@@ -40,15 +46,26 @@ public class Item_Manager : MonoBehaviour
     private string Type;
     private int myButtonNum;
 
+    
+
     public bool battleMode;
     private void Start()
     {
+        GameObject.Find("EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(Button1.gameObject);
         SetBoxes();
         SetImages();
     }
     void Update()
     {
         SetBoxes(); // Should this always be in update miguel? This is being called each frame! -sam
+        if (items[myButtonNum].Type == "Consumable" || items[myButtonNum].Type == "SpeedPotion") EquipButtonText.text = "Use";
+        else if (items[myButtonNum].Type == "AttackDmg")
+        {
+            print("WEAPON");
+            if (isItemEquipped()) EquipButtonText.text = "Equip";
+            else EquipButtonText.text = "Unequip";
+        }
+
     }
     void SetBoxes()
     {
@@ -70,6 +87,7 @@ public class Item_Manager : MonoBehaviour
             {
                 Texture2D texture = Resources.Load(items[i].imageResourcePath) as Texture2D;
                 Boxes[i].image.sprite = Sprite.Create(texture, new Rect(0,0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
+                
             }
         }
     }
@@ -89,17 +107,8 @@ public class Item_Manager : MonoBehaviour
     }
     public void Use()
     {
-        if(Type == "Consumable")
-        {
-            Player.Heal(items[myButtonNum].booster_hp);
-            print(items[myButtonNum].booster_hp);
-            Drop();
-        }
-        if(Type == "SpeedPotion")
-        {
-            Player.ItemBoosterID.speed = myButtonNum;
-            Drop();
-        }
+        if (EquipButtonText.text == "Use") RegularUse();
+        else if (EquipButtonText.text == "Equip" || EquipButtonText.text == "Unequip") Equip();
 
         // At the end we need to figure out where to go next
         if (battleMode) {
@@ -107,17 +116,35 @@ public class Item_Manager : MonoBehaviour
             BattleManager.battleState = BattleManager.BattleState.EntityTurn; 
         }
     }
+    public void RegularUse() 
+    {
+        if (Type == "Consumable")
+        {
+            Player.Heal(items[myButtonNum].booster_hp);
+            print(items[myButtonNum].booster_hp);
+            Drop();
+        }
+        if (Type == "SpeedPotion")
+        {
+            Player.ItemBoosterID.speed = myButtonNum;
+            Drop();
+        }
+    }
     public void Equip()
     {
-        if (Type == "Weapon")
+        if (Type == "AttackDmg")
         {
-            if (Player.ItemBoosterID.attackDmg != myButtonNum) // Is this item already equipped?
+            if (isItemEquipped()) // Is this item already equipped?
                 Player.ItemBoosterID.attackDmg = myButtonNum; // Equip
             else Player.ItemBoosterID.attackDmg = -1; // Dont Equip
         }
                     
                     
                     // if this is already equipped maybe change equip button to unequip??
+    }
+    bool isItemEquipped() 
+    {
+        return Player.ItemBoosterID.attackDmg != myButtonNum;
     }
     public void Explination()
     {

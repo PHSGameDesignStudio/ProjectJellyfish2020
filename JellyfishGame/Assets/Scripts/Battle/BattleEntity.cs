@@ -45,6 +45,8 @@ public class BattleEntity : MonoBehaviour
     }
     public void Damage(int hpDec)
     {
+        HP1UP.MakeAt(hpDec + "-", transform.position, Color.red);
+
         if (hp == 1 && hpDec >= 1)
         {
             // Called when the player wants to destroy the entity

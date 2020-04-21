@@ -77,6 +77,7 @@
     <Compile Include="Assets\Extensions\2d-extras-2018.3\Assets\Tilemap\Tiles\Weighted Random Tile\WeightedRandomTile.cs" />
     <Compile Include="Assets\Scripts\Basic\MoveTowards.cs" />
     <Compile Include="Assets\Scripts\Basic\ObjectSpawner.cs" />
+    <Compile Include="Assets\Scripts\Basic\Timer.cs" />
     <Compile Include="Assets\Scripts\Battle\BattleEntity.cs" />
     <Compile Include="Assets\Scripts\Battle\BattleEntityAttack.cs" />
     <Compile Include="Assets\Scripts\Battle\BattleManager.cs" />
@@ -107,6 +108,7 @@
     <Compile Include="Assets\Scripts\CameraData.cs" />
     <Compile Include="Assets\Scripts\DestroyObjectsWithTag.cs" />
     <Compile Include="Assets\Scripts\Fade.cs" />
+    <Compile Include="Assets\Scripts\HPBox\HP1UP.cs" />
     <Compile Include="Assets\Scripts\HPBox\HPBox.cs" />
     <Compile Include="Assets\Scripts\InstantiateRunner.cs" />
     <Compile Include="Assets\Scripts\Items\Item.cs" />

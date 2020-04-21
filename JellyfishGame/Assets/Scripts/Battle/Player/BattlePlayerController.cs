@@ -50,6 +50,7 @@ public class BattlePlayerController : MonoBehaviour
                     // Damaging player [consider battle dmg depending on entity or if player wearing armor / defense]
                     print("HOSTILE!!!");
                     player.SetHP(player.GetHP() - 1);
+                    HP1UP.MakeAt("-1", player.transform.position, Color.red);
                     SFXManager.ResetSFX("PlayerHit");
 
                     // Updating the HP UI box

@@ -35,6 +35,7 @@ public class Player : MonoBehaviour
     }
     public static void Heal(int hpToHeal)
     {
+        HP1UP.MakeAt(hpToHeal + "+", BattlePlayer.player.transform.position, Color.green);
         hp += hpToHeal;
         if (hp > maxHp) hp = maxHp; // So that hp doesn't go over the limit.
 
