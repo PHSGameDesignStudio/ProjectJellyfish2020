@@ -60,14 +60,32 @@ public class AttackSlider : MonoBehaviour
     {
         var chancesToHit = 4; // this is the amount of chances spawned by AttackBox.cs
         var realHitPts = ((float)hitpts / (float)chancesToHit) * Player.GetAttackDmg(); // multiply so we can change the amount of dmg
-        EntitySelector.GetSelectedEntity().GetComponent<BattleEntity>().Damage((int)realHitPts);
-        BattleManager.battleState = BattleManager.BattleState.EntityTurn; // Need to call StartBattle();
-        BattleManager.GetScript().StartBattle();
+        var selectedEntity = EntitySelector.GetSelectedEntity();
+        var selectedBattleEntity = selectedEntity.GetComponent<BattleEntity>();
+        selectedBattleEntity.Damage((int)realHitPts);
+        selectedBattleEntity.StartCoroutine(DamageEntityPeriod(1f, selectedEntity));
+
         var attBox = transform.parent.GetComponent<AttackBox>();
         attBox.DestroyAreas();
         DestroyFeedbackItems();
         Destroy(attBox.gameObject);
         Destroy(gameObject);
+    }
+
+    /// <summary>
+    /// A wait period where the enemy is damaged to give feedback. Etc. Enemy Shake
+    /// </summary>
+    public IEnumerator DamageEntityPeriod(float timeInSeconds, GameObject selectedEntity)
+    {
+        var e_sprite_anim = selectedEntity.transform.Find("sprite").GetComponent<Animator>();
+        e_sprite_anim.SetBool("isShaking", true);
+        print("IS START");
+
+        yield return new WaitForSeconds(timeInSeconds);
+
+        e_sprite_anim.SetBool("isShaking", false);
+        BattleManager.GetScript().StartBattle();
+        print("IS OVER");
     }
     public void DestroyFeedbackItems()
     {

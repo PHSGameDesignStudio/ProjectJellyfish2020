@@ -20,7 +20,7 @@ public class BattleEntity : MonoBehaviour
     {
         hp = startHP;
         DontDestroyOnLoad(gameObject);
-        if (spRenderer == null) spRenderer = GetComponent<SpriteRenderer>();
+        if (spRenderer == null) spRenderer = transform.Find("sprite").GetComponent<SpriteRenderer>();
         selectUI = transform.Find("selectUI").GetComponent<SpriteRenderer>();
     }
 
@@ -62,7 +62,7 @@ public class BattleEntity : MonoBehaviour
     }
     public void Update()
     {
-        spRenderer.enabled = BattleManager.isItPlayerTurn();
+                            
         //gameObject.SetActive(attackDone);
         SetPosition();
         hpbox.SetHP(hp, startHP);

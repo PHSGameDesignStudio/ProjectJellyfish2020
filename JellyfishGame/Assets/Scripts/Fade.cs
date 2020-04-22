@@ -29,8 +29,8 @@ public class Fade : MonoBehaviour
     {
         spRenderer.color = Color.Lerp(new Color(mainColor.r, mainColor.g, mainColor.b, 0), new Color(mainColor.r, mainColor.g, mainColor.b, 1), currentTime / maxTime);
         currentTime += Time.deltaTime * m;
-        print(currentTime);
-        print(Time.deltaTime * m);
+        //print(currentTime);
+        //print(Time.deltaTime * m);
         if (currentTime <= 0) Destroy(this);
     }
 
