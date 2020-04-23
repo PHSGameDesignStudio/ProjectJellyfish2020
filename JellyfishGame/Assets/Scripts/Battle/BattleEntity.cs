@@ -22,6 +22,7 @@ public class BattleEntity : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         if (spRenderer == null) spRenderer = transform.Find("sprite").GetComponent<SpriteRenderer>();
         selectUI = transform.Find("selectUI").GetComponent<SpriteRenderer>();
+        hpbox.SetHP(hp, startHP);
     }
 
     // Update is called once per frame
@@ -45,8 +46,6 @@ public class BattleEntity : MonoBehaviour
     }
     public void Damage(int hpDec)
     {
-        HP1UP.MakeAt(hpDec + "-", transform.position, Color.red);
-
         if (hp == 1 && hpDec >= 1)
         {
             // Called when the player wants to destroy the entity
@@ -59,13 +58,21 @@ public class BattleEntity : MonoBehaviour
             hp -= Mathf.Abs(hpDec);
             if (hp < 1) hp = 1;
         }
+        hpbox.SetHP(hp, startHP);
+    }
+    public void DamageFeedback(int hpDec)
+    {
+        HP1UP.MakeAt(hpDec + "-", transform.position, Color.red);
+        int newHp = (int)hp - hpDec;
+        if (newHp < 1) newHp = 1;
+        hpbox.SetHP(newHp, startHP);
     }
     public void Update()
     {
                             
         //gameObject.SetActive(attackDone);
         SetPosition();
-        hpbox.SetHP(hp, startHP);
+        
 
         // If we arent selecting any entities there is no need to show the select sprite.
         if (BattleManager.battleState != BattleManager.BattleState.PlayerSelectEntity) 

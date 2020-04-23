@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
         if (hp == -100)
         {
             hp = maxHp;
+            BattlePlayer.player.UpdateHPUI();
         }
     }
 
