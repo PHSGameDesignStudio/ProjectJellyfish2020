@@ -8,7 +8,6 @@ public class Text_Manager : MonoBehaviour
     public GameObject TextBox;
     Vector3 theWidth;
     public GameObject[] textDialougeList = new GameObject[] { };
-    public GameObject[] textDialougeTriggers = new GameObject[] { };
     public int Dialouge = 0;
     public GameObject Player;
     void Start()
@@ -53,29 +52,5 @@ public class Text_Manager : MonoBehaviour
     private void OnEnable()
     {
         Start();
-    }
-    private void Checkif()
-    {
-        for (int i = 0; i < textDialougeTriggers.Length+1; i = i + 2)
-        {
-            if (textDialougeTriggers[i] != null)
-            {
-                
-                //if ()
-                {
-                   /// Debug.Log("yeet");
-                   /// Destroy(textDialougeTriggers[i]);
-                   /// Destroy(textDialougeTriggers[i + 1]);
-                   /// textDialougeTriggers[i] = textDialougeTriggers[i + 1] = null;
-                   /// Dialouge = i / 2 + 1;
-                   /// Start();
-                }
-            }
-
-        }
-    }
-    private void Update()
-    {
-        Checkif();
     }
 }
