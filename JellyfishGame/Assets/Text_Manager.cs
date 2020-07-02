@@ -60,18 +60,15 @@ public class Text_Manager : MonoBehaviour
         {
             if (textDialougeTriggers[i] != null)
             {
-                Transform triggerPosTL = textDialougeTriggers[i].GetComponent<Transform>();
-                Transform triggerPosBR = textDialougeTriggers[i + 1].GetComponent<Transform>();
-                Transform playerPos = Player.GetComponent<Transform>();
-                Debug.Log("yote");
-                if (playerPos.localPosition.x > triggerPosTL.localPosition.x && playerPos.localPosition.y < triggerPosTL.localPosition.y && playerPos.localPosition.x < triggerPosBR.localPosition.x && playerPos.localPosition.y > triggerPosBR.localPosition.y)
+                
+                //if ()
                 {
-                    Debug.Log("yeet");
-                    Destroy(textDialougeTriggers[i]);
-                    Destroy(textDialougeTriggers[i + 1]);
-                    textDialougeTriggers[i] = textDialougeTriggers[i + 1] = null;
-                    Dialouge = i / 2 + 1;
-                    Start();
+                   /// Debug.Log("yeet");
+                   /// Destroy(textDialougeTriggers[i]);
+                   /// Destroy(textDialougeTriggers[i + 1]);
+                   /// textDialougeTriggers[i] = textDialougeTriggers[i + 1] = null;
+                   /// Dialouge = i / 2 + 1;
+                   /// Start();
                 }
             }
 
