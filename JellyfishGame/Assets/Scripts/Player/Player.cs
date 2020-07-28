@@ -5,11 +5,14 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // Default Values
-    public static int hp = -100;
+    public static int hp = -100, maxHp = 20;
+    public static int mana = -100, maxMana = 5;
+
     public static float speed = 5;
     public static int attackDmg = 2;
     public static int magicDmg = 4;
-    public static int maxHp = 20;
+    
+
     
 
     // Item Boosters you can select in inventory
@@ -25,7 +28,9 @@ public class Player : MonoBehaviour
         if (hp == -100)
         {
             hp = maxHp;
+            mana = maxMana;
             BattlePlayer.player.UpdateHPUI();
+            BattlePlayer.player.UpdateManaUI();
         }
     }
 

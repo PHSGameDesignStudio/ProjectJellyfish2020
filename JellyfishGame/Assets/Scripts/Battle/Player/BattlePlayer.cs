@@ -24,10 +24,15 @@ public class BattlePlayer : MonoBehaviour
     public void UpdateHPUI()
     {
         var hpBox = transform.Find("hpSlider").GetComponent<HPBox>();
-        hpBox.SetHP(Player.hp, Player.maxHp);
+        hpBox.SetHP(Player.hp, Player.maxHp, ease: true);
         hpBox.SetColor(
             Color.Lerp(Color.red, Color.green, (float)Player.hp / (float)Player.maxHp)
         );
+    }
+    public void UpdateManaUI()
+    {
+        var hpBox = transform.Find("manaSlider").GetComponent<HPBox>();
+        hpBox.SetHP(Player.mana, Player.maxMana, ease: true, setColor: false);
     }
     public int GetHP()
     {

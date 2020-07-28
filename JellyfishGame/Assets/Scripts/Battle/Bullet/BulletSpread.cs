@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class BulletSpread : MonoBehaviour
 {
     // Maximum is 8 as of now. More will be added later.
