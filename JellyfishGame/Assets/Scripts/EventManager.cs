@@ -7,11 +7,19 @@ public class EventManager : MonoBehaviour
     public Transform player;
     public Text_Manager textManager;
     public SpriteRenderer jumpCut;
-    public Cinemachine.CinemachineVirtualCamera Camera; 
+    public Cinemachine.CinemachineVirtualCamera Camera;
+    public bool atEnd = true;
 
-    public void Teleport(Transform newPos)
+    public IEnumerator Teleport(Transform newPos)
     {
+        StartCoroutine(FadeOut());
+        Debug.Log("yeet");
+        while (!atEnd)
+        {
+            yield return null;
+        }
         player.position = newPos.position;
+        StartCoroutine(FadeIn());
     }
     IEnumerator FadeOut()
     { 
@@ -20,6 +28,7 @@ public class EventManager : MonoBehaviour
             jumpCut.color = new Color(1f, 1f, 1f, i);
             yield return new WaitForSeconds(.0078f);      
         }
+        atEnd = false;
         StopCoroutine(FadeOut());
     }
     IEnumerator FadeIn()
@@ -29,15 +38,8 @@ public class EventManager : MonoBehaviour
             jumpCut.color = new Color(1f, 1f, 1f, i);
             yield return new WaitForSeconds(.0078f);
         }
+        atEnd = true;
         StopCoroutine(FadeIn());
-    }
-    public void StartFadeIn()
-    {
-        StartCoroutine("FadeIn");
-    }
-    public void StartFadeOut()
-    {
-        StartCoroutine("FadeOut");
     }
     public void MoveCamera(Transform newPos)
     {
