@@ -168,3 +168,16 @@ public class Item_Manager : MonoBehaviour
         }*/
     }
 }
+
+    void Attack()
+    {
+        //attack
+    }
+    void Heal()
+    {
+        //heal
+    }
+    void Buff()
+    {
+        //buffs
+    }
