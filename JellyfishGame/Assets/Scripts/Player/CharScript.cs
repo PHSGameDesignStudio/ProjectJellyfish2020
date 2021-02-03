@@ -1,13 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 public class CharScript : MonoBehaviour
 {
     public float speed = 10.0f;
     public float rotationSpeed = 100.0f;
-    public bool facingRight = true;
-    public Animator animator;
-    private bool Stopped;
     // Update is called once per frame
     void Update()
     {
@@ -17,53 +15,19 @@ public class CharScript : MonoBehaviour
         // Move translation along the object's z-axis
         if (Input.GetKey("w"))
         {
-            transform.Translate(0, translation, 0);
-            animator.SetBool("Backward", true);
+            transform.Translate(0,translation,0);
         }
-        else { animator.SetBool("Backward", false); }
-        
         if (Input.GetKey("a"))
         {
-            Stopped = true;
-            animator.SetBool("Walking", true);
-            transform.Translate(-translation, 0, 0);
-            if (!facingRight)
-            {
-                Flip();
-            }
+            transform.Translate(-translation,0,0);
         }
-        else if (Input.GetKey("d"))
+        if (Input.GetKey("d"))
         {
-            Stopped = true;
-            animator.SetBool("Walking", true);
-            transform.Translate(translation, 0, 0);
-            if (facingRight)
-            {
-                Flip();
-            }
+            transform.Translate(translation,0,0);
         }
-        else { 
-            animator.SetBool("Walking", false);
-            if(Stopped)
-            { 
-                Flip();
-                Stopped = false;
-            }
-        }
-        
         if (Input.GetKey("s"))
         {
-            animator.SetBool("Forward", true);
-            transform.Translate(0, -translation, 0);
+            transform.Translate(0,-translation,0);
         }
-        else{animator.SetBool("Forward", false);
-        }
-    }
-    public void Flip()
-    {
-        facingRight = !facingRight;
-        Vector3 theScale = transform.localScale;
-        theScale.x *= -1;
-        transform.localScale = theScale;
     }
 }
