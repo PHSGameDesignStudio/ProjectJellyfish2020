@@ -5,5 +5,5 @@ using UnityEngine;
 public class BattleEntityObject : ScriptableObject
 {
     public GameObject[] ObjectAtks;
-    public BattleAttack[] scriptAtks;
+    public BattleEntityAttack[] scriptAtks;
 }
