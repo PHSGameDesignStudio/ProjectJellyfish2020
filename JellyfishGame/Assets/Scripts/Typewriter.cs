@@ -75,5 +75,8 @@ public class Typewriter : MonoBehaviour
         if (Face[i] == "stel") { Faces[0].SetActive(true); }
         else if (Face[i] == "jel") { Faces[1].SetActive(true); }
         else if (Face[i] == "stelSurprise") { Faces[2].SetActive(true); }
+        else if (Face[i] == "banana") { Faces[3].SetActive(true); }
+        else if (Face[i] == "amon") { Faces[4].SetActive(true); }
+
     }
 }

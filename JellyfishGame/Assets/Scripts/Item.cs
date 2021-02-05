@@ -36,14 +36,13 @@ public class Item : MonoBehaviour
     private void InventoryFull()
     {
         textManager.Dialouge = 4;
-        Debug.Log("jfkdlsjfaklsjhdkl");
         Setup();
     }
     private void CollectedItem()
     {
         textManager.Dialouge = Event;
-        Destroy(Object);
         Setup();
+        Destroy(Object);
     }
     private void Setup()
     {
