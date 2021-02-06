@@ -695,11 +695,17 @@
     <Reference Include="UnityEngine.TestRunner">
       <HintPath>D:/Documents/UnityProjects/ProjectJellyfish/ProjectJellyfish2020/JellyfishGame/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
+      <HintPath>D:/Documents/UnityProjects/ProjectJellyfish/ProjectJellyfish2020/JellyfishGame/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/Documents/UnityProjects/ProjectJellyfish/ProjectJellyfish2020/JellyfishGame/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Monetization">
       <HintPath>D:/Documents/UnityProjects/ProjectJellyfish/ProjectJellyfish2020/JellyfishGame/Library/ScriptAssemblies/UnityEngine.Monetization.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Shaders">
+      <HintPath>D:/Documents/UnityProjects/ProjectJellyfish/ProjectJellyfish2020/JellyfishGame/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.multiplayer-hlapi.Editor">
       <HintPath>D:/Documents/UnityProjects/ProjectJellyfish/ProjectJellyfish2020/JellyfishGame/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Editor.dll</HintPath>
@@ -710,8 +716,20 @@
     <Reference Include="UnityEngine.Advertisements">
       <HintPath>D:/Documents/UnityProjects/ProjectJellyfish/ProjectJellyfish2020/JellyfishGame/Library/ScriptAssemblies/UnityEngine.Advertisements.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Editor">
+      <HintPath>D:/Documents/UnityProjects/ProjectJellyfish/ProjectJellyfish2020/JellyfishGame/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime">
+      <HintPath>D:/Documents/UnityProjects/ProjectJellyfish/ProjectJellyfish2020/JellyfishGame/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/Documents/UnityProjects/ProjectJellyfish/ProjectJellyfish2020/JellyfishGame/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Runtime">
+      <HintPath>D:/Documents/UnityProjects/ProjectJellyfish/ProjectJellyfish2020/JellyfishGame/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Editor">
+      <HintPath>D:/Documents/UnityProjects/ProjectJellyfish/ProjectJellyfish2020/JellyfishGame/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>D:/Documents/UnityProjects/ProjectJellyfish/ProjectJellyfish2020/JellyfishGame/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
@@ -722,6 +740,9 @@
     <Reference Include="Unity.CollabProxy.Editor">
       <HintPath>D:/Documents/UnityProjects/ProjectJellyfish/ProjectJellyfish2020/JellyfishGame/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Postprocessing.Editor">
+      <HintPath>D:/Documents/UnityProjects/ProjectJellyfish/ProjectJellyfish2020/JellyfishGame/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="com.unity.multiplayer-weaver.Editor">
       <HintPath>D:/Documents/UnityProjects/ProjectJellyfish/ProjectJellyfish2020/JellyfishGame/Library/ScriptAssemblies/com.unity.multiplayer-weaver.Editor.dll</HintPath>
     </Reference>
@@ -731,8 +752,14 @@
     <Reference Include="Unity.Rider.Editor">
       <HintPath>D:/Documents/UnityProjects/ProjectJellyfish/ProjectJellyfish2020/JellyfishGame/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+      <HintPath>D:/Documents/UnityProjects/ProjectJellyfish/ProjectJellyfish2020/JellyfishGame/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
       <HintPath>D:/Documents/UnityProjects/ProjectJellyfish/ProjectJellyfish2020/JellyfishGame/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Postprocessing.Runtime">
+      <HintPath>D:/Documents/UnityProjects/ProjectJellyfish/ProjectJellyfish2020/JellyfishGame/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
       <HintPath>D:/Documents/UnityProjects/ProjectJellyfish/ProjectJellyfish2020/JellyfishGame/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
@@ -742,6 +769,12 @@
     </Reference>
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>D:/Documents/UnityProjects/ProjectJellyfish/ProjectJellyfish2020/JellyfishGame/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ShaderGraph.Editor">
+      <HintPath>D:/Documents/UnityProjects/ProjectJellyfish/ProjectJellyfish2020/JellyfishGame/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
+      <HintPath>D:/Documents/UnityProjects/ProjectJellyfish/ProjectJellyfish2020/JellyfishGame/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>D:/Documents/UnityProjects/ProjectJellyfish/ProjectJellyfish2020/JellyfishGame/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
@@ -757,39 +790,6 @@
     </Reference>
     <Reference Include="com.unity.multiplayer-hlapi.Runtime">
       <HintPath>D:/Documents/UnityProjects/ProjectJellyfish/ProjectJellyfish2020/JellyfishGame/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
-      <HintPath>D:/Documents/UnityProjects/ProjectJellyfish/ProjectJellyfish2020/JellyfishGame/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Universal.Shaders">
-      <HintPath>D:/Documents/UnityProjects/ProjectJellyfish/ProjectJellyfish2020/JellyfishGame/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Editor">
-      <HintPath>D:/Documents/UnityProjects/ProjectJellyfish/ProjectJellyfish2020/JellyfishGame/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Runtime">
-      <HintPath>D:/Documents/UnityProjects/ProjectJellyfish/ProjectJellyfish2020/JellyfishGame/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Universal.Runtime">
-      <HintPath>D:/Documents/UnityProjects/ProjectJellyfish/ProjectJellyfish2020/JellyfishGame/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Universal.Editor">
-      <HintPath>D:/Documents/UnityProjects/ProjectJellyfish/ProjectJellyfish2020/JellyfishGame/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Postprocessing.Editor">
-      <HintPath>D:/Documents/UnityProjects/ProjectJellyfish/ProjectJellyfish2020/JellyfishGame/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-      <HintPath>D:/Documents/UnityProjects/ProjectJellyfish/ProjectJellyfish2020/JellyfishGame/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Postprocessing.Runtime">
-      <HintPath>D:/Documents/UnityProjects/ProjectJellyfish/ProjectJellyfish2020/JellyfishGame/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ShaderGraph.Editor">
-      <HintPath>D:/Documents/UnityProjects/ProjectJellyfish/ProjectJellyfish2020/JellyfishGame/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
-      <HintPath>D:/Documents/UnityProjects/ProjectJellyfish/ProjectJellyfish2020/JellyfishGame/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
