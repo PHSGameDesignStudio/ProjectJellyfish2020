@@ -164,6 +164,7 @@
     <Compile Include="Assets\LeanTween\Framework\LeanTweenExt.cs" />
     <Compile Include="Assets\ScriptableObjects\BattleAttackObject.cs" />
     <Compile Include="Assets\ScriptableObjects\BattleEntityObject.cs" />
+    <Compile Include="Assets\ScriptableObjects\BattleManagerObject.cs" />
     <Compile Include="Assets\ScriptableObjects\BulletSpawns\BulletSequence.cs" />
     <Compile Include="Assets\ScriptableObjects\BulletSpawns\BulletSpawn.cs" />
     <Compile Include="Assets\Scripts\Basic\MoveTowards.cs" />
@@ -198,6 +199,7 @@
     <Compile Include="Assets\Scripts\ButtonSelect.cs" />
     <Compile Include="Assets\Scripts\CameraData.cs" />
     <Compile Include="Assets\Scripts\Collider_Script.cs" />
+    <Compile Include="Assets\Scripts\Colliders\BattleCollider.cs" />
     <Compile Include="Assets\Scripts\DestroyObjectsWithTag.cs" />
     <Compile Include="Assets\Scripts\DestroyTrigger.cs" />
     <Compile Include="Assets\Scripts\EventManager.cs" />
@@ -256,7 +258,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
-    <None Include="Assets\Audio\SFX\soundeffects-credit.txt" />
+    <None Include="Assets\Resources\Audio\SFX\soundeffects-credit.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\LeanTween\ReadMe.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />

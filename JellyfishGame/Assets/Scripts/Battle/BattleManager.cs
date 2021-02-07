@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class BattleManager : MonoBehaviour
 {
-    public GameObject[] RefEntities;
+    public static BattleManagerObject battleSettings;
+    //public GameObject[] RefEntities;
     public static ArrayList entities;
-    public int minEnemies;
-    public int maxEnemies;
     public enum BattleState
     {
         PlayerMain,
@@ -50,6 +50,8 @@ public class BattleManager : MonoBehaviour
         {
             entities = new ArrayList();
             InitEntities();
+            InitScene();
+            InitAudio();
         }
         // We don't want to use mouse
         Cursor.lockState = CursorLockMode.Locked;
@@ -115,11 +117,11 @@ public class BattleManager : MonoBehaviour
     // MODE = ENTITY
     public void InitEntities()
     {
-        var n = Random.Range(minEnemies, maxEnemies);
+        var n = Random.Range(battleSettings.minEnemies, battleSettings.maxEnemies + 1);
         transform.SetParent(null); // ABLE TO INSTANTIATE
         for (int i = 0; i <= n; i++)
         {
-            GameObject obj = Instantiate(RefEntities[Random.Range(0, RefEntities.Length)]) as GameObject;
+            GameObject obj = Instantiate(Resources.Load("BattleEntities/" + battleSettings.entitiesRef[Random.Range(0, battleSettings.entitiesRef.Length)])) as GameObject;
             var e = obj.GetComponent<BattleEntity>();
             e.i = i; // Item in list
             e.n = n; // length of list
@@ -127,6 +129,20 @@ public class BattleManager : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject); // UNABLE TO INSTANTIATE
         print("SCENE STARTO");
+    }
+    public void InitScene()
+    {
+        var sceneParent = GameObject.Find("SceneGrid");
+        var count = sceneParent.transform.childCount;
+        for (int i = 0; i < count; i++)
+        {
+            var child = sceneParent.transform.GetChild(i);
+            child.gameObject.SetActive(child.name.Equals(battleSettings.sceneName));
+        }
+    }
+    public void InitAudio()
+    {
+        GameObject.Find("BattleMusic").GetComponent<AudioSource>().clip = Resources.Load("Audio/" + battleSettings.audioRef) as AudioClip;
     }
     public void StartBattle()
     {
